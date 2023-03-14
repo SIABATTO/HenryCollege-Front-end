@@ -31,30 +31,30 @@ const NavBarLanding = () => {
 		  sx={{ mr: 2 }}
 		>
 		</IconButton>
-		<IconButton
+		
+		<img style={{ width : '120px'}} src='https://assets.soyhenry.com/logos/LOGO-HENRY-04_w.png' alt="logo" />
+		<Typography variant="h6" sx={{marginLeft : '3%'}}>
+		  Carreras
+		  <IconButton
         aria-controls="menu"
         aria-haspopup="true"
         onClick={handleClick}
         color="inherit"
       >
       </IconButton>
-		<Menu
-        id="menu"
-        anchorEl={anchorEl}
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-      >
-        <MenuList>
-          <MenuItem onClick={handleClose}>Opción 1</MenuItem>
-          <MenuItem onClick={handleClose}>Opción 2</MenuItem>
-          <MenuItem onClick={handleClose}>Opción 3</MenuItem>
-        </MenuList>
-      </Menu>
-		<img style={{ width : '120px'}} src='https://assets.soyhenry.com/logos/LOGO-HENRY-04_w.png' alt="logo" />
-		<Typography variant="h6" sx={{marginLeft : '3%'}}>
-		  Carreras
-		</Typography>
-		
+			<Menu
+				id="menu"
+				anchorEl={anchorEl}
+				open={Boolean(anchorEl)}
+				onClose={handleClose}
+			>
+				<MenuList>
+					<MenuItem onClick={handleClose}>Opción 1</MenuItem>
+					<MenuItem onClick={handleClose}>Opción 2</MenuItem>
+					<MenuItem onClick={handleClose}>Opción 3</MenuItem>
+				</MenuList>
+			</Menu>
+		</Typography>		
 	  </Toolbar>
 	</AppBar>
   </Box>
