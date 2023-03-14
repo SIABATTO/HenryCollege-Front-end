@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 import NavBar from './components/navBar/NavBar'
 import { ThemeProvider,createTheme } from '@mui/material'
+import NavBarLanding from './components/NavBarLanding/NavBarLanding'
 
 const theme = createTheme({
   palette: {
@@ -11,10 +12,10 @@ const theme = createTheme({
       main: '#3f51b5',
     },
     secondary: {
-      main: '#f50057',
+      main: '#212121',
     },
     background: {
-      paper: '#080808',
+      paper: '#fff',
     },
   },
 })
@@ -24,7 +25,8 @@ function App() {
   return (
     <div className="App">
     <ThemeProvider theme={theme}>
-      <NavBar/>
+      {/* <NavBar/> */}
+      <NavBarLanding/>
     </ThemeProvider>
     </div>
   )
