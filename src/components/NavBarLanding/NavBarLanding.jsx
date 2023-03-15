@@ -21,7 +21,7 @@ const NavBarLanding = () => {
   };
 
 	return <Box sx={{ flexGrow: 1 }}>
-	<AppBar position="fixed" sx={{ bgcolor : 'black'}}>
+	<AppBar position="fixed" color="secondary">
 	  <Toolbar>
 		<IconButton
 		  size="large"
@@ -34,7 +34,7 @@ const NavBarLanding = () => {
 		
 		<img style={{ width : '120px'}} src='https://assets.soyhenry.com/logos/LOGO-HENRY-04_w.png' alt="logo" />
 		<Typography variant="h6" sx={{marginLeft : '3%'}}>
-		  Henry College
+		  Carreras
 		  <IconButton
         aria-controls="menu"
         aria-haspopup="true"
