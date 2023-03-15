@@ -14,6 +14,8 @@ const theme = createTheme({
     },
     secondary: {
       main: '#fafafa',  //blanco
+      contrastText: 'white', // color de texto secundario
+     
     },
     background: {
       paper: '#080808', //negro
