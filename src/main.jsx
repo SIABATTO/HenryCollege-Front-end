@@ -1,4 +1,3 @@
-
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
@@ -9,13 +8,13 @@ const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#f9ef5a',
+      main: '#ffc107',  //amarillo
     },
     secondary: {
-      main: '#f50057',
+      main: '#fafafa',  //blanco
     },
     background: {
-      paper: '#080808',
+      paper: '#080808', //negro
     },
   },
 });
