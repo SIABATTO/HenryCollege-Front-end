@@ -5,15 +5,10 @@ import Footer from './components/footer/Footer'
 import Pagination from './components/paged/Paged'
 import { Landing } from './views'
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <Container>
       <div className="App">
-        <div>
-          
-          <Pagination/>
-        </div>
         <Landing/>
       </div>
         <Footer/>

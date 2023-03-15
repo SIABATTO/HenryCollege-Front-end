@@ -11,7 +11,7 @@ const Paged = () => {
     return (
         <div>
         <h1>Esta pagina es {page}</h1>
-        <Pagination count={10} color="primary" onChange={handleChange}/>
+        <Pagination count={10} color="#FFFFFF" onChange={handleChange}/>
         </div>
     )
 }

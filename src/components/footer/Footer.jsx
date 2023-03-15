@@ -21,17 +21,9 @@ const Footer = () => {
               <Grid item xs={6} md={3}>
                 <Stack spacing={2}>
                   <Typography variant="caption" component="a" href="#">
-                    FAQ
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit inventore voluptatum blanditiis optio? Minima harum accusantium temporibus voluptatem ullam, adipisci totam non ut qui facilis inventore, animi aliquam recusandae soluta.
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
-                    Investor Relations
-                  </Typography>
-                  <Typography variant="caption" component="a" href="#">
-                    Privacy
-                  </Typography>
-                  <Typography variant="caption" component="a" href="#">
-                    Speed Test
-                  </Typography>
+                  
                 </Stack>
               </Grid>
               <Grid item xs={6} md={3}>
