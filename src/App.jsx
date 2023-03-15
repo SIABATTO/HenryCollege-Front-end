@@ -9,13 +9,8 @@ function App() {
   return (
     <Container>
       <div className="App">
-        <div>
-          
-          <Pagination/>
-        </div>
         <Landing/>
       </div>
-        <Footer/>
     </Container>
   )
 }
