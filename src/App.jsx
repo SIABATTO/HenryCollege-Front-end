@@ -2,7 +2,8 @@ import { Container } from '@mui/system'
 import { useState } from 'react'
 import './App.css'
 import Footer from './components/footer/Footer'
-import { Home, Landing } from './views'
+import Home from './views/home/Home'
+
 
 function App() {
 
