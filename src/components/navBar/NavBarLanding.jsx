@@ -23,19 +23,19 @@ const NavBarLanding = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" sx={{ bgcolor: "primary" }}>
+      <AppBar position="fixed" sx={{ bgcolor: "#fafafa" }}>
         <Toolbar>
           <IconButton
             size="large"
             edge="start"
-            color="inherit"
+            color="#080808"
             aria-label="menu"
             sx={{ mr: 2 }}
           ></IconButton>
 
           <img
             style={{ width: "120px" }}
-            src="https://assets.soyhenry.com/logos/LOGO-HENRY-04_w.png"
+            src="https://assets.soyhenry.com/henry-landing/assets/Henry/logo.png"
             alt="logo"
           />
           <Typography variant="h6" sx={{ marginLeft: "3%" }}>

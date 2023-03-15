@@ -2,7 +2,7 @@
 import MyCard from "../Card/Cards";
 
 
-const cardsContainer = ({ id, name, image }) => {
+const CardsContainer = ({ id, name, image }) => {
   // const Courses = useSelector((state) => state.allCourses);
 
   return (
@@ -12,4 +12,4 @@ const cardsContainer = ({ id, name, image }) => {
   );
 };
 
-export default cardsContainer;
+export default CardsContainer;
