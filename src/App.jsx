@@ -12,6 +12,7 @@ function App() {
         <Home/>
         {/* <Landing/> */}
       </div>
+        <Footer/>
     </Container>
   )
 }
