@@ -3,13 +3,14 @@ import './App.css'
 import Pagination from './components/paged/Paged'
 import Footer from './components/footer/Footer'
 import { Container } from '@mui/system'
-import { Landing } from './views'
+import { Home, Landing } from './views'
 function App() {
 
   return (
     <Container>
       <div className="App">
-        <Landing/>
+        <Home/>
+        {/* <Landing/> */}
       </div>
     </Container>
   )
