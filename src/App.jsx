@@ -11,11 +11,12 @@ function App() {
       <div className="App">
         <div>
           
-          <Pagination/>
+          
         </div>
         <Landing/>
       </div>
         <Footer/>
+        <Pagination/>
     </Container>
   )
 }
