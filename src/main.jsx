@@ -1,10 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
-import { BrowserRouter } from "react-router-dom";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Provider } from 'react-redux';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from "react-router-dom";
+import App from './App';
+import './index.css';
 
 const theme = createTheme({
   palette: {
