@@ -1,8 +1,8 @@
+import { Container } from '@mui/system'
 import { useState } from 'react'
 import './App.css'
-import Pagination from './components/paged/Paged'
 import Footer from './components/footer/Footer'
-import { Container } from '@mui/system'
+import Pagination from './components/paged/Paged'
 import { Landing } from './views'
 function App() {
   const [count, setCount] = useState(0)
