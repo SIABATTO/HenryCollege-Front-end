@@ -12,6 +12,7 @@ function App() {
         <Landing/>
       </div>
         <Footer/>
+        <Pagination/>
     </Container>
   )
 }
