@@ -5,7 +5,6 @@ import imageGirl from "../../assets/images/LandingGirl.jpg";
 import Footer from "../../components/footer/Footer";
 import NavBarLanding from "../../components/navBarLanding/NavBarLanding";
 import styles from "./Landing.module.css";
-import NavBarLanding from "../../components/navBarLanding/NavBarLanding";
 
 function Landing() {
   return (
