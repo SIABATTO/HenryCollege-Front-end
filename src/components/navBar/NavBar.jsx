@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -26,7 +27,9 @@ const NavBar = () => {
             College
           </Typography>
           <Button sx={{ mr: 2 }} color="warning">Henry</Button>
-          <Button sx={{ mr: 2 }} color="inherit">Cursos</Button>
+          {/* <Link to={"/courses"}>
+            <Button sx={{ mr: 2 }} color="inherit">Cursos</Button>
+          </Link> */}
           <Button sx={{ mr: 2 }} color="inherit">FAQs</Button>
           <Button sx={{ mr: 2 }} color="inherit">Nosotros</Button>
           <Button sx={{ mr: 2 ,bgcolor:'#ffff00',color:'#212121'}} variant="contained">Crear Cuenta</Button>

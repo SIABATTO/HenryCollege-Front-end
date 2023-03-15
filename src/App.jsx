@@ -3,17 +3,20 @@ import { useState } from 'react'
 import './App.css'
 import Footer from './components/footer/Footer'
 import Pagination from './components/paged/Paged'
-import { Landing } from './views'
+import { Route, Routes } from "react-router-dom";
+import { Home, Landing } from './views'
+import NavBar from './components/navBar/NavBar'
 function App() {
 
   return (
-    <Container>
+
       <div className="App">
-        <Landing/>
+        <NavBar/>
+        <Routes>
+          <Route exact path="/" element={<Landing/>} />
+          <Route exact path="/Courses" element={<Home/>} />
+        </Routes>
       </div>
-        <Footer/>
-        <Pagination/>
-    </Container>
   )
 }
 
