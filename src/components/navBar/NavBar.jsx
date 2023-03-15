@@ -22,7 +22,7 @@ const NavBar = () => {
           </IconButton>
           {/* <MenuIcon /> */}
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <img style={{ width : '45px'}} src="https://assets.soyhenry.com/logos/ISOLOGO_HENRY_BLACK.png" alt="logo" />
+          <img style={{ width : '60px'}} src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fd31uz8lwfmyn8g.cloudfront.net%2FAssets%2Flogo-henry-white-lg.png&imgrefurl=http%3A%2F%2Fdata.prep.soyhenry.com%2Fclase_uno%2F&tbnid=DvCp1wVT-cFatM&vet=12ahUKEwjN4pOgpd79AhV3tZUCHeRsAwkQMygCegUIARDCAQ..i&docid=3YIr7mkuaV73HM&w=437&h=170&itg=1&q=logo%20henry%20programacion&ved=2ahUKEwjN4pOgpd79AhV3tZUCHeRsAwkQMygCegUIARDCAQ" alt="logo" />
             College
           </Typography>
           <Button sx={{ mr: 2 }} color="warning">Henry</Button>

@@ -3,71 +3,86 @@ import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
+import imageLogo from '../../assets/images/henryBlanco.png'
 
 
 const Footer = () => {
   return (
-    <Box sx={{ bgcolor: 'common.black', color: 'grey.700' }}>
+    <Box sx={{ bgcolor: 'common.black', color: 'white' }}>
 
       <Container maxWidth="md" sx={{ py: 6 }}>
         <Stack spacing={4}>
 
-          <Typography>
-            Questions? Call 007-803-321-2130
-          </Typography>
 
           <Box>
             <Grid container spacing={4}>
               <Grid item xs={6} md={3}>
                 <Stack spacing={2}>
+                <img style={{ width : '60px',height: '60px'}} src={imageLogo} alt="logo" />
                   <Typography variant="caption" component="a" href="#">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit inventore voluptatum blanditiis optio? Minima harum accusantium temporibus voluptatem ullam, adipisci totam non ut qui facilis inventore, animi aliquam recusandae soluta.
                   </Typography>
-                  
+
                 </Stack>
               </Grid>
               <Grid item xs={6} md={3}>
                 <Stack spacing={2}>
-                  <Typography variant="caption" component="a" href="#">
-                    Help Center
+                  <Typography>
+                    Quick Links
                   </Typography>
                   <Typography variant="caption" component="a" href="#">
-                    Jobs
+                    Portfolio
                   </Typography>
                   <Typography variant="caption" component="a" href="#">
-                    Cookie Preferences
+                    Blogs
                   </Typography>
                   <Typography variant="caption" component="a" href="#">
-                    Legal Notices
-                  </Typography>
-                </Stack>
-              </Grid>
-              <Grid item xs={6} md={3}>
-                <Stack spacing={2}>
-                  <Typography variant="caption" component="a" href="#">
-                    Account
+                    About
                   </Typography>
                   <Typography variant="caption" component="a" href="#">
-                    Ways to Watch
+                    Press
                   </Typography>
                   <Typography variant="caption" component="a" href="#">
-                    Corporate Information
-                  </Typography>
-                  <Typography variant="caption" component="a" href="#">
-                    Only on Netflix
+                    Careers We're hiring
                   </Typography>
                 </Stack>
               </Grid>
               <Grid item xs={6} md={3}>
                 <Stack spacing={2}>
-                  <Typography variant="caption" component="a" href="#">
-                    Media Center
+                  <Typography>
+                    Services
                   </Typography>
                   <Typography variant="caption" component="a" href="#">
-                    Terms of Use
+                    UX/UI Design
                   </Typography>
                   <Typography variant="caption" component="a" href="#">
-                    Contact Us
+                    App Development
+                  </Typography>
+                  <Typography variant="caption" component="a" href="#">
+                    Web Development
+                  </Typography>
+                  <Typography variant="caption" component="a" href="#">
+                    Quality Assurance
+                  </Typography>
+                  <Typography variant="caption" component="a" href="#">
+                    Machine Learning
+                  </Typography>
+                </Stack>
+              </Grid>
+              <Grid item xs={6} md={3}>
+                <Stack spacing={2}>
+                  <Typography>
+                    Reach Us
+                  </Typography>
+                  <Typography variant="caption" component="a" href="#">
+                    Hello@landify.co
+                  </Typography>
+                  <Typography variant="caption" component="a" href="#">
+                    +91 98765 43210
+                  </Typography>
+                  <Typography variant="caption" component="a" href="#">
+                    772 Lyonwood    Ave
+                    Walnut, CA 91789
                   </Typography>
                 </Stack>
               </Grid>
@@ -75,8 +90,7 @@ const Footer = () => {
             </Grid>
           </Box>
 
-          <Typography variant="caption">@2020 Landify UI kit.All rights reserved</Typography>
-
+          <Typography variant="caption">@2020 Landify UI kit.All rights reserved Terms & Conditions |Privacy Policy | Sitemap | Disclaimer</Typography>
         </Stack>
       </Container>
 
