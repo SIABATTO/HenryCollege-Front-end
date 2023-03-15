@@ -1,3 +1,4 @@
+import imageLogo from '../../assets/images/henryBlanco.png'
 import {
     Button,
     Card,
@@ -20,7 +21,7 @@ import {
         <CardActionArea>
           <CardMedia
             component="img"
-            image="https://assets.soyhenry.com/logoOG.png"
+            image={"https://assets.soyhenry.com/logoOG.png"}
             height='100%'
             display='flex'
             flexDirection= 'column'

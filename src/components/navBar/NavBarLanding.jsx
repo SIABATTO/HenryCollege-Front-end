@@ -23,7 +23,11 @@ const NavBarLanding = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
+<<<<<<< HEAD
       <AppBar position="fixed" sx={{ bgcolor: "#fafafa" }}>
+=======
+      <AppBar position="fixed" sx={{ bgcolor: "secondary" }}>
+>>>>>>> 2e2232a0a94dc759dee6b94fbf2a8c6007a07c9a
         <Toolbar>
           <IconButton
             size="large"
