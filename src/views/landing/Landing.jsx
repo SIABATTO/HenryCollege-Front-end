@@ -6,7 +6,7 @@ import styles from "./Landing.module.css";
 
 function Landing() {
   return (
-    <Box >
+    <Box>
       <NavBarLanding/>
       <Box className={styles.container}>
         <Box className={styles.h}>
