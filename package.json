@@ -11,11 +11,6 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-<<<<<<< HEAD
-    "@mui/icons-material": "^5.11.11",
-    "@mui/material": "^5.11.13",
-=======
->>>>>>> 45ac3b356a44d4ad7b44dfb5fbb7f84e47680f11
     "@mui/styled-engine-sc": "^5.11.11",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.13",

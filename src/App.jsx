@@ -1,35 +1,23 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import Pagination from './components/paged/Paged'
+import Footer from './components/footer/Footer'
 import { Container } from '@mui/system'
-<<<<<<< HEAD
-
-import MyCard from './components/card/Cards'
-
-
-=======
-import Cards from "@mui/material"
 import { Landing } from './views'
->>>>>>> 45ac3b356a44d4ad7b44dfb5fbb7f84e47680f11
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-  
- 
-    <div className="App">
-<<<<<<< HEAD
-        <Container>
-      <MyCard/>
-   
-      </Container>
-=======
-      
-      <Landing/>
-
->>>>>>> 45ac3b356a44d4ad7b44dfb5fbb7f84e47680f11
-    </div>
-  
+    <Container>
+      <div className="App">
+        <div>
+          
+          <Pagination/>
+        </div>
+        <Landing/>
+      </div>
+        <Footer/>
+    </Container>
   )
 }
 
