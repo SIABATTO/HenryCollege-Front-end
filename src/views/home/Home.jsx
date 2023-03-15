@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import React from "react";
 import Footer from "../../components/footer/Footer";
 import Paged from "../../components/paged/Paged";
-import cardsContainer from "../../components/cardContainer/cardCointainer";
+import CardsContainer from "../../components/cardContainer/CardCointainer";
 
 function Home() {
   return (
     <Box>
-      <cardsContainer/>
+      <CardsContainer/>
       <Paged/>
       <Footer/>
     </Box>
