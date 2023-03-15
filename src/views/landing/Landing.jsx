@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 import imageGirl from "../../assets/images/LandingGirl.jpg";
 import Footer from "../../components/footer/Footer";
-import NavBarLanding from "../../components/navBar/NavBarLanding";
+import NavBarLanding from "../../components/navBarLanding/NavBarLanding";
 import styles from "./Landing.module.css";
 
 function Landing() {
