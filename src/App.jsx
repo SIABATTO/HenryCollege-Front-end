@@ -2,23 +2,18 @@ import { Container } from '@mui/system'
 import { useState } from 'react'
 import './App.css'
 import Footer from './components/footer/Footer'
-import { Home, Landing } from './views'
-
+import Pagination from './components/paged/Paged'
+import { Landing } from './views'
 function App() {
 
   return (
-    <div>
+    <Container>
       <div className="App">
-        <Home/>
         <Landing/>
       </div>
         <Footer/>
-<<<<<<< HEAD
         <Pagination/>
     </Container>
-=======
-    </div>
->>>>>>> 7d4d2d13015c624da1df79b9c477dfa701b471dd
   )
 }
 
