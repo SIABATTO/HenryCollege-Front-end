@@ -1,13 +1,23 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+<<<<<<< HEAD
 import Pagination from './components/paged/Paged'
 import Footer from './components/footer/Footer'
+=======
+import { Container } from '@mui/system'
+import Cards from "@mui/material"
+import { Landing } from './views'
+>>>>>>> ddf2e80a4ce6a046dc134e96ff9c18c2790cf23d
 function App() {
   const [count, setCount] = useState(0)
 
   return (
+    <Container>
+      <Cards/>
+ 
     <div className="App">
+<<<<<<< HEAD
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
@@ -32,7 +42,13 @@ function App() {
         <Footer/>
         <Pagination/>
       </div>
+=======
+      
+      <Landing/>
+
+>>>>>>> ddf2e80a4ce6a046dc134e96ff9c18c2790cf23d
     </div>
+    </Container>
   )
 }
 
