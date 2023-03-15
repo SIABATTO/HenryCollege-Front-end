@@ -1,12 +1,11 @@
-import React from 'react'
-import NavBar from '../../components/navBar/NavBar'
+import React from "react";
 
-const Detail = () => {
+function Detail() {
   return (
     <div>
-        <NavBar/>
+        Estoy en Detail
     </div>
-  )
+  );
 }
 
-export default Detail
+export default Detail;
