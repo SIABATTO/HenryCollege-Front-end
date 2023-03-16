@@ -9,7 +9,6 @@ import store from './redux/store/Store';
 
 const theme = createTheme({
   palette: {
-    mode: 'light',
     primary: {
       main: '#FFFF01',  //amarillo
       contrastText: 'black', // color de texto secundario
