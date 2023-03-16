@@ -9,7 +9,6 @@ import MenuList from "@mui/material/MenuList";
 import MenuItem from "@mui/material/MenuItem";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import imageLogo from '../../assets/images/Henry-logo.png'
 
 const NavBarLanding = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -24,7 +23,7 @@ const NavBarLanding = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" sx={{ color: "secondary" }}>
+      <AppBar position="fixed" sx={{ bgcolor: "#fafafa" }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -34,7 +33,11 @@ const NavBarLanding = () => {
             sx={{ mr: 2 }}
           ></IconButton>
 
-          <img style={{ width : '120px'}} src={imageLogo} alt="logo" />
+          <img
+            style={{ width: "120px" }}
+            src="https://assets.soyhenry.com/henry-landing/assets/Henry/logo.png"
+            alt="logo"
+          />
           <Typography variant="h6" sx={{ marginLeft: "3%" }}>
             <Link to={"/courses"}>
               <Button sx={{ mr: 2 }} color="inherit">

@@ -1,4 +1,4 @@
-import Box from '@mui/material/Box'
+import { Box } from '@mui/material'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
@@ -12,8 +12,6 @@ const Footer = () => {
 
       <Container maxWidth="md" sx={{ py: 6 }}>
         <Stack spacing={4}>
-
-
           <Box>
             <Grid container spacing={4}>
               <Grid item xs={6} md={3}>
