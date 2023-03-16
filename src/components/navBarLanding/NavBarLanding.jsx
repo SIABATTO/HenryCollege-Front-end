@@ -32,22 +32,10 @@ const NavBarLanding = () => {
           />
           <Typography variant="h6" sx={{ marginLeft: "3%" }}>
             <Link to={"/courses"}>
-              <Button sx={{ mr: 2 }} color="inherit">
+              <Button sx={{ mr: 2 ,bgcolor:'#212121',color:'#fffde7'}} color="secondary">
               Henry College
               </Button>
             </Link>
-            <Menu
-              id="menu"
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-            >
-              <MenuList>
-                <MenuItem onClick={handleClose}>Opción 1</MenuItem>
-                <MenuItem onClick={handleClose}>Opción 2</MenuItem>
-                <MenuItem onClick={handleClose}>Opción 3</MenuItem>
-              </MenuList>
-            </Menu>
           </Typography>
         </Toolbar>
       </AppBar>

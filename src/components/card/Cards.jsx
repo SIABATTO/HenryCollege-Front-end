@@ -11,7 +11,9 @@ import {
   export default function MyCard({  name, image,Subject,type }) {
     return (
       <Card
-        sx={{
+        sx={{ 
+          mt:5,
+          ml:5,
           transition: "0.2s",
           "&:hover": {
             transform: "scale(1.05)",
