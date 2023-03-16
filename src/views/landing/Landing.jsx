@@ -1,5 +1,4 @@
 import { Box } from "@mui/system";
-import { Link } from "react-router-dom";
 import React from "react";
 import imageGirl from "../../assets/images/LandingGirl.jpg";
 import Footer from "../../components/footer/Footer";
@@ -9,7 +8,6 @@ import styles from "./Landing.module.css";
 function Landing() {
   return (
     <Box>
-      <Link to={`/`}>
         <NavBarLanding/>
         <Box className={styles.container}>
           <Box className={styles.h}>
@@ -22,7 +20,6 @@ function Landing() {
           </Box>
         </Box>
         <Footer/>
-      </Link>
     </Box>
   );
 }

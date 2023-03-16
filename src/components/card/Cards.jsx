@@ -8,7 +8,7 @@ import {
     CardMedia,
   } from "@mui/material";
   
-  export default function MyCard() {
+  export default function MyCard({  name, image,Subject,type }) {
     return (
       <Card
         sx={{
@@ -19,19 +19,19 @@ import {
         }}
       >
         <CardActionArea>
-          <CardMedia
-            component="img"
-            image={"https://assets.soyhenry.com/logoOG.png"}
+          <CardMedia sx={{width:"100%"}}
+            image="https://assets.soyhenry.com/logoOG.png"
             height='100%'
             display='flex'
-            flexDirection= 'column'
+            width= {100}
+
           />
           <CardContent>
-            <h2>Database Fundamentals Course</h2>
-            <p>
-            Bienvenidos conceptos básicos y contexto histórico de las Bases de Datos.
-            </p>
+            <h2>{ name }</h2>
+            <h3>{type}</h3>
+            <p>{Subject}</p>
           </CardContent>
+          
         </CardActionArea>
   
         <CardActions>
