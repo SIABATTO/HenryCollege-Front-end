@@ -19,7 +19,7 @@ import {
         }}
       >
         <CardActionArea>
-          <CardMedia sx={{width:"100%"}}
+          <CardMedia sx={{mt:20,  width:"100%"}}
             image="https://assets.soyhenry.com/logoOG.png"
             height='100%'
             display='flex'
