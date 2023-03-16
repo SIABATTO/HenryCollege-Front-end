@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import styles from "./Form.module.css";
 import React, { useState } from "react";
-import { LoadingButton } from '@mui/lab';
+// import  LoadingButton from '@mui/lab/LoadingButton';
 
 function Form() {
   const [loading, setLoading] = useState(true);
@@ -46,14 +46,14 @@ function Form() {
                 </Grid>
 
                 <Box sx={{'& > button': { m: 1 } }}>
-                  <LoadingButton
+                  {/* <LoadingButton
                   size="small"
                   loading={loading}
                   variant="outlined"
                   disabled
                   >
                     Iniciar Sesión
-                  </LoadingButton>
+                  </LoadingButton> */}
                 </Box>
               </CardContent>
             </Card>

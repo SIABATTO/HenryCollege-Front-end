@@ -10,6 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
 const Search = styled('div')(({ theme }) => ({
+  
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -53,7 +54,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function SearchBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, mt:5}} >
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -63,7 +64,7 @@ export default function SearchBar() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+
           </IconButton>
           <Typography
             variant="h6"

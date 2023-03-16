@@ -1,7 +1,7 @@
 import AppBar from "@mui/material/AppBar";
-import { Box } from '@mui/material'
+import Box from "@mui/material/Box";
 import Button from '@mui/material/Button';
-// import IconButton from "@mui/material/IconButton";
+import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
@@ -23,8 +23,16 @@ const NavBarLanding = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" color="primary">
+      <AppBar position="fixed" sx={{ bgcolor: "#fafafa" }}>
         <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="#080808"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          ></IconButton>
+
           <img
             style={{ width: "120px" }}
             src="https://assets.soyhenry.com/henry-landing/assets/Henry/logo.png"
@@ -32,7 +40,7 @@ const NavBarLanding = () => {
           />
           <Typography variant="h6" sx={{ marginLeft: "3%" }}>
             <Link to={"/courses"}>
-              <Button sx={{ mr: 2 }} color="inherit">
+              <Button sx={{ mr: 2 ,bgcolor:'#212121',color:'#fffde7'}} color="secondary">
               Henry College
               </Button>
             </Link>
