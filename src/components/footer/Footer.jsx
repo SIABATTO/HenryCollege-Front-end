@@ -16,9 +16,9 @@ const Footer = () => {
             <Grid container spacing={4}>
               <Grid item xs={6} md={3}>
                 <Stack spacing={2}>
-                  <box>
+                  <Box>
                 <img style={{ width : '60px'}} src={imageLogo} alt="logo" />
-                </box>
+                </Box>
                   <Typography variant="caption" component="a" href="#">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit inventore voluptatum blanditiis optio? Minima harum accusantium temporibus voluptatem ullam, adipisci totam non ut qui facilis inventore, animi aliquam recusandae soluta.
                   </Typography>
