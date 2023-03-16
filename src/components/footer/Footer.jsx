@@ -12,8 +12,6 @@ const Footer = () => {
 
       <Container maxWidth="md" sx={{ py: 6 }}>
         <Stack spacing={4}>
-
-
           <Box>
             <Grid container spacing={4}>
               <Grid item xs={6} md={3}>
