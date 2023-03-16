@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import styles from "./Form.module.css";
 import React, { useState } from "react";
-import { LoadingButton } from '@mui/lab';
+import LoadingButton from '@mui/lab/LoadingButton';
 
 function Form() {
   const [loading, setLoading] = useState(true);
