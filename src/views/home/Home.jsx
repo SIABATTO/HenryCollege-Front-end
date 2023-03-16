@@ -6,6 +6,7 @@ import Paged from "../../components/paged/Paged";
 import CardsContainer from "../../components/cardContainer/CardContainer";
 import SearchBar from "../../components/searchBar/SearchBar";
 
+function Home() {
   return (
     <Box>
       <SearchBar/>
@@ -14,6 +15,6 @@ import SearchBar from "../../components/searchBar/SearchBar";
       <Footer/>
     </Box>
   );
-
+}
 
 export default Home;
