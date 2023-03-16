@@ -34,9 +34,9 @@ import {
           
         </CardActionArea>
   
-        <CardActions>
+        <CardActions >
           <Button variant="contained">Add</Button>
-          <Button>Remove</Button>
+          <Button sx={{ mr: 2 ,bgcolor:'#212121',color:'#fffde7'}}>Remove</Button>
         </CardActions>
       </Card>
     );
