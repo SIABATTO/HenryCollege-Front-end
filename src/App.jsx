@@ -4,7 +4,7 @@ import './App.css'
 import Footer from './components/footer/Footer'
 import Pagination from './components/paged/Paged'
 import { Route, Routes } from "react-router-dom";
-import { Home, Landing } from './views'
+import { Form, Home, Landing } from './views'
 import NavBar from './components/navBar/NavBar'
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Landing/>} />
           <Route exact path="/Courses" element={<Home/>} />
+          <Route exact path="/iniciarsesion" element={<Form/>} />
         </Routes>
       </div>
   )
