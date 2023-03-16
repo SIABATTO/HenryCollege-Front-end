@@ -31,7 +31,9 @@ const NavBar = () => {
           <Button sx={{ mr: 2 }} color="inherit">FAQs</Button>
           <Button sx={{ mr: 2 }} color="inherit">Nosotros</Button>
           <Button sx={{ mr: 2 ,bgcolor:'#ffff00',color:'#212121'}} variant="contained">Crear Cuenta</Button>
-          <Button sx={{ mr: 2 ,bgcolor:'#212121',color:'#fffde7'}} variant="contained">Iniciar sesión</Button>
+          <Link to={"/courses/iniciarsesion"}>
+            <Button sx={{ mr: 2 ,bgcolor:'#212121',color:'#fffde7'}} variant="contained">Iniciar sesión</Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </Box>

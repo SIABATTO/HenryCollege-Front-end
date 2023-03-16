@@ -40,16 +40,10 @@ const NavBarLanding = () => {
           />
           <Typography variant="h6" sx={{ marginLeft: "3%" }}>
             <Link to={"/courses"}>
-              <Button sx={{ mr: 2 }} color="inherit">
+              <Button sx={{ mr: 2 ,bgcolor:'#212121',color:'#fffde7'}} color="secondary">
               Henry College
               </Button>
             </Link>
-            <IconButton
-              aria-controls="menu"
-              aria-haspopup="true"
-              onClick={handleClick}
-              color="inherit"
-            ></IconButton>
             <Menu
               id="menu"
               anchorEl={anchorEl}

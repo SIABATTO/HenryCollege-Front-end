@@ -7,7 +7,13 @@ import {
 } from "@mui/material";
 import styles from "./Form.module.css";
 import React, { useState } from "react";
+<<<<<<< HEAD
+import { LoadingButton } from '@mui/lab';
+
+
+=======
 // import  LoadingButton from '@mui/lab/LoadingButton';
+>>>>>>> 8198e35adc9fc95d46857a3710bc21a8fa00f289
 
 function Form() {
   const [loading, setLoading] = useState(true);
