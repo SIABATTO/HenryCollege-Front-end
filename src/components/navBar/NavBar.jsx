@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import imageLogo from '../../assets/images/henryBlanco.png'
+import imageLogo from '../../assets/images/ISOLOGO_HENRY_BLACK.png'
 import React from 'react';
 
 
@@ -23,7 +23,7 @@ const NavBar = () => {
           >
           </IconButton>
           {/* <MenuIcon /> */}
-          <img style={{ width : '45px'}} src="https://assets.soyhenry.com/logos/ISOLOGO_HENRY_BLACK.png" alt="logo" />
+          <img style={{ width : '45px'}} src={imageLogo} alt="logo" />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             College
           </Typography>
