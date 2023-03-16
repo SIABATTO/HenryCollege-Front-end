@@ -1,7 +1,7 @@
-import imageLogo from '../../assets/images/henryBlanco.png'
+import imageLogo from '../../assets/images/henryCard.png';
 import {
     Button,
-    Card,
+    Container,
     CardActionArea,
     CardActions,
     CardContent,
@@ -10,8 +10,8 @@ import {
   
   export default function MyCard({  name, image,Subject,type }) {
     return (
-      <Card
-        sx={{
+      <Container
+        sx={{ mt: 20,
           transition: "0.2s",
           "&:hover": {
             transform: "scale(1.05)",
@@ -19,12 +19,12 @@ import {
         }}
       >
         <CardActionArea>
-          <CardMedia sx={{width:"100%"}}
-            image="https://assets.soyhenry.com/logoOG.png"
+          <CardMedia
+            component="img"
+            image={"https://assets.soyhenry.com/logoOG.png"}
             height='100%'
             display='flex'
-            width= {100}
-
+            flexDirection= 'column'
           />
           <CardContent>
             <h2>{ name }</h2>
@@ -36,9 +36,9 @@ import {
   
         <CardActions>
           <Button variant="contained">Add</Button>
-          <Button>Remove</Button>
+          <Button color="error">Remove</Button>
         </CardActions>
-      </Card>
+      </Container>
     );
   }
   
