@@ -18,7 +18,9 @@ const NavBar = () => {
             <Button sx={{mr: 2, color:'black', bgcolor:'#f5f5f5'}}color='inherit' >Henry</Button>
           </Link>
           <Button sx={{mr: 2 }}color="inherit">Nosotros</Button>
-          <Button sx={{mr: 2 , bgcolor:'#ffff00',color:'#212121'}} variant="contained">Crear Cuenta</Button>
+          <Link to={'/register'}>
+            <Button sx={{mr: 2 , bgcolor:'#ffff00',color:'#212121'}} variant="contained">Crear Cuenta</Button>
+          </Link>
           <Link to={"/courses/iniciarsesion"}>
             <Button sx={{ mr: 2 ,bgcolor:'#212121',color:'#fffde7'}} variant="contained">Iniciar sesión</Button>
           </Link>

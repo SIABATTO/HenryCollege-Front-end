@@ -6,6 +6,7 @@ import Pagination from './components/paged/Paged'
 import { Route, Routes } from "react-router-dom";
 import { Form, Home, Landing } from './views'
 import NavBar from './components/navBar/NavBar'
+import FormRegister from './views/formRegister/FormRegister'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/" element={<Landing/>} />
           <Route exact path="/courses" element={<Home/>} />
           <Route exact path="/courses/iniciarsesion" element={<Form/>} />
+          <Route exact path="/register" element={<FormRegister/>} />
         </Routes>
       </div>
   )
