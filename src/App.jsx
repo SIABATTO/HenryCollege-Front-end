@@ -1,11 +1,7 @@
-import { Container } from '@mui/system'
-import { useState } from 'react'
+import { Route, Routes, useLocation } from "react-router-dom"
 import './App.css'
-import Footer from './components/footer/Footer'
-import Pagination from './components/paged/Paged'
-import { Route, Routes, useLocation } from "react-router-dom";
-import { Detail, Form, Home, Landing, SubLanding } from './views'
 import NavBar from './components/navBar/NavBar'
+import { About, Form, Home, Landing, SubLanding } from './views'
 import FormRegister from './views/formRegister/FormRegister'
 
 function App() {
@@ -23,6 +19,8 @@ function App() {
           <Route exact path="/henrycollege/courses" element={<Home/>} />
           <Route exact path="/henrycollege/register" element={<FormRegister/>} />
           <Route exact path="/henrycollege/iniciarsesion" element={<Form/>} />
+          <Route exact path="/henrycollege/nosotros" element={<About/>} />
+          
         </Routes>
       </div>
   )
