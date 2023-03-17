@@ -68,6 +68,7 @@ function Form() {
                   variant="outlined"
                   helperText="Campo obligatorio"
                   sx={{ width: 300 }}
+                  color="tertiary"
                   />
                 </Grid>
                 
@@ -81,6 +82,7 @@ function Form() {
                 fullWidth
                 variant="outlined"
                 sx={{ m: 2, width: 300 }} 
+                color="tertiary"
                 >
                 <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                 <OutlinedInput
@@ -99,6 +101,7 @@ function Form() {
                     </InputAdornment>
                   }
                   label="Password"
+                  color="tertiary"
                 />
                 <FormHelperText id="outlined-password-helper-text">Campo obligatorio</FormHelperText>
               </FormControl>
@@ -112,6 +115,7 @@ function Form() {
                   disabled={ !loading ? false : true}
                   style={{ width: 300 }}
                   sx={{ mr: 2 ,bgcolor:'#ffff00',color:'#212121'}}
+                  color="tertiary"
                   >
                     Iniciar Sesión
                   </LoadingButton>
