@@ -29,7 +29,9 @@ const NavBar = () => {
           </Typography>
           <Button sx={{ mr: 2 }} color="warning">Henry</Button>
           <Button sx={{ mr: 2 }} color="inherit">FAQs</Button>
-          <Button sx={{ mr: 2 }} color="inherit">Nosotros</Button>
+          <Link to={"/about"}>
+          <Button sx={{ mr: 2 }} color="inherit">About Us</Button>
+        </Link>
           <Button sx={{ mr: 2 ,bgcolor:'#ffff00',color:'#212121'}} variant="contained">Crear Cuenta</Button>
           <Link to={"/courses/iniciarsesion"}>
             <Button sx={{ mr: 2 ,bgcolor:'#212121',color:'#fffde7'}} variant="contained">Iniciar sesión</Button>
