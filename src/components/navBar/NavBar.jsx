@@ -12,15 +12,6 @@ const NavBar = () => {
   return (
     <AppBar position="fixed" color="secondary">
       <Toolbar>
-        <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          sx={{ mr: 2 }}
-        ></IconButton>
-        {/* <MenuIcon /> */}
-
         <Box
           display="flex"
           direction="row"
@@ -69,10 +60,6 @@ const NavBar = () => {
               Cursos
             </Button>
           </Link>
-
-          <Button sx={{ mr: 2 }} color="inherit">
-            FAQs
-          </Button>
           <Button sx={{ mr: 2 }} color="inherit">
             Nosotros
           </Button>
