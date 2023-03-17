@@ -3,22 +3,26 @@ import { useState } from 'react'
 import './App.css'
 import Footer from './components/footer/Footer'
 import Pagination from './components/paged/Paged'
-import { Route, Routes } from "react-router-dom";
-import { Form, Home, Landing } from './views'
+import { Route, Routes, useLocation } from "react-router-dom";
+import { Detail, Form, Home, Landing, SubLanding } from './views'
 import NavBar from './components/navBar/NavBar'
 import FormRegister from './views/formRegister/FormRegister'
 
 function App() {
 
+  const location = useLocation();
+
   return (
 
       <div className="App">
-        <NavBar/>
+        {location.pathname !== "/" && <NavBar />}
         <Routes>
           <Route exact path="/" element={<Landing/>} />
-          <Route exact path="/courses" element={<Home/>} />
-          <Route exact path="/courses/iniciarsesion" element={<Form/>} />
-          <Route exact path="/register" element={<FormRegister/>} />
+          <Route exact path="/courses" element={<SubLanding/>} />
+          <Route exact path="/henrycollege" element={<SubLanding/>} />
+          <Route exact path="/henrycollege/courses" element={<Home/>} />
+          <Route exact path="/henrycollege/register" element={<FormRegister/>} />
+          <Route exact path="/henrycollege/iniciarsesion" element={<Form/>} />
         </Routes>
       </div>
   )

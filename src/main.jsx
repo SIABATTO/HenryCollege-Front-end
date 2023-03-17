@@ -10,12 +10,16 @@ import store from './redux/store/Store';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#FFFF01',  //amarillo
+      main: '#FFFF01', //amarillo
       contrastText: 'black', // color de texto secundario
     },
     secondary: {
-      main: '#fafafa',  //blanco
+      main: '#fafafa', //blanco
       contrastText: 'black', // color de texto secundario
+    },
+    tertiary: {
+      main: '#000000', //negro
+      contrastText: 'white', // color de texto secundario
     },
     background: {
       paper: '#fafafa', //negro
