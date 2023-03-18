@@ -9,29 +9,17 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
       <AppBar position="fixed" color="secondary">
-        <Toolbar> 
-        <Link
-            to={"/henrycollege"}
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1 }}
-          >
+        <Toolbar>           
+          <Link to={"/henrycollege"}>            
             <img
-              style={{ width: "45px" }}
+              style={{ width: "45px"}}
               src="https://assets.soyhenry.com/logos/ISOLOGO_HENRY_BLACK.png"
               alt="logo"
             />
-          </Link>
-
-          <Link
-            to={"/henrycollege"}
-           
-          >
-            <Typography color="black">
+          </Link>          
+            <Typography color="black" variant='h6'sx={{ flexGrow : 1, mr : 25}}>
               | College
-            </Typography>
-          </Link>
-
+            </Typography>       
           <Link to={'/'} color="inherit">
             <Button sx={{mr: 2, color:'black', bgcolor:'#f5f5f5'}}color='inherit' >Henry</Button>
           </Link>

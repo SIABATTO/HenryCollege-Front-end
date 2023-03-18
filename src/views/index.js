@@ -5,4 +5,4 @@ import Landing from "./landing/Landing";
 import SubLanding from "./subLanding/SubLanding";
 import About from "./about/about";
 
-export { Detail, Form, Home, Landing, About };
+export { Detail, Form, Home, Landing, About, SubLanding };

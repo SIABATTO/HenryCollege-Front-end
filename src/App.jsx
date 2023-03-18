@@ -19,8 +19,7 @@ function App() {
           <Route exact path="/henrycollege/courses" element={<Home/>} />
           <Route exact path="/henrycollege/register" element={<FormRegister/>} />
           <Route exact path="/henrycollege/iniciarsesion" element={<Form/>} />
-          <Route exact path="/henrycollege/nosotros" element={<About/>} />
-          
+          <Route exact path="/henrycollege/nosotros" element={<About/>} />          
         </Routes>
       </div>
   )
