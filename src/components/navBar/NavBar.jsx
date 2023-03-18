@@ -33,6 +33,11 @@ const NavBar = () => {
               Nosotros
             </Button>
           </Link>
+          <Link to={"/dashboard"}color="inherit">
+             <Button sx={{mr: 2, color:'black', bgcolor:'#f5f5f5'}} color="inherit">
+              Dashboard
+            </Button>
+          </Link>
           <Link to={'/henrycollege/register'}>
             <Button sx={{mr: 2 , bgcolor:'#ffff00',color:'#212121'}} variant="contained">Crear Cuenta</Button>
           </Link>

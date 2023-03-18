@@ -1,16 +1,22 @@
-import * as React from 'react';
+import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { Button, IconButton, InputAdornment, InputLabel, OutlinedInput } from '@mui/material';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+import * as React from 'react';
+import { addUser } from '../../redux/slices/Slices';
+import { useDispatch } from 'react-redux';
 
 const FormRegister=()=> {
+
+  const dispatch = useDispatch()
+
     const [input, setInput] = React.useState({
+        id : 0,
         nombre : '',
         apellido : '',
         correo: '',
         telefono: '',
-        contraseña: ''        
+        contraseña: '',
+        confirm_contraseña: ''        
     });
     const onChange = (event) =>{
       event.preventDefault()
@@ -21,15 +27,18 @@ const FormRegister=()=> {
         [name] : value
       })
     }
-
-
-    const [showPassword, setShowPassword] = React.useState(false);
-
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
-
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
+    const onSubmit = (event) => {
+       event.preventDefault()
+       setInput({
+        ...input,
+        id : +1
+       })
+       input.contraseña !== input.confirm_contraseña ?
+       alert('La contraseña no coincide') : 
+       dispatch(addUser(input)) 
+       alert('Usuario creado satisfactoriamente')      
+    }
+    
   return (
     <Box
         component="form"
@@ -61,6 +70,7 @@ const FormRegister=()=> {
           id="outlined-controlled"
           label="Correo"
           name='correo'
+          type="email"
           value={input.correo}
           onChange={onChange}
         />
@@ -74,35 +84,33 @@ const FormRegister=()=> {
         />
       </div>
       <div>
-      <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-          <OutlinedInput
-            id="outlined-adornment-password"
-            type={showPassword ? 'text' : 'password'}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
-          />
         <TextField
-         sx={{ml:2}}
-          id="outlined-controlled"
-          label="Repite la contraseña"
-          name='contraseña'
-          value={input.contraseña}
-          onChange={onChange}
-        />
+            id="outlined-password-input"
+            label="Contraseña"
+            type="password"
+            autoComplete="current-password"
+            value={input.contraseña}
+            name="contraseña"
+            onChange={onChange}
+          />  
+        <TextField
+            sx={{ml:2}}
+            id="outlined-password-input"
+            label="Repite contraseña"
+            type="password"
+            value={input.confirm_contraseña}
+            name="confirm_contraseña"
+            autoComplete="current-password"
+            onChange={onChange}
+              />   
       </div>
-      <Button sx={{mr: 2 , bgcolor:'#ffff00',color:'#212121', width:'90%'}} variant="contained">Registrarse</Button>
-      
+          <Button 
+            sx={{mr: 2 , bgcolor:'#ffff00',color:'#212121', width:'90%'}} 
+            variant="contained"
+            onClick={onSubmit}
+            type='submit'
+            >Registrarse
+          </Button>      
     </Box>
   );
 }
