@@ -28,6 +28,27 @@ const CardsContainer = ({ id, name, image, Subject, type }) => {
       price: "$9.30",
       start_date: "10/7/2022",
     },
+    {
+      image:"https://assets.soyhenry.com/logoOG.png",
+      id: 3,
+      curse_name: "Quality Engineer",
+      type: "Devlin",
+      level: 16,
+      duration: "3:05 PM",
+      price: "$9.30",
+      start_date: "10/7/2022",
+    },
+    {
+      image:"https://assets.soyhenry.com/logoOG.png",
+      id: 4,
+      curse_name: "Quality Engineer",
+      type: "Devlin",
+      level: 16,
+      duration: "3:05 PM",
+      price: "$9.30",
+      start_date: "10/7/2022",
+    },
+    
   ];
 
   return (
@@ -39,8 +60,8 @@ const CardsContainer = ({ id, name, image, Subject, type }) => {
               id={course.id}
               name={course.curse_name}
               type={course.type}
-              image={image}
-              key={id}
+              image={course.image}
+              key={course.id}
               Subject={Subject}
             />
           </div>

@@ -1,100 +1,51 @@
+import AppBar from '@mui/material/AppBar';
+import Button from '@mui/material/Button';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import React from 'react';
 import { Link } from "react-router-dom";
-import AppBar from "@mui/material/AppBar";
-import { Box } from "@mui/material";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import imageLogo from "../../assets/images/ISOLOGO_HENRY_BLACK.png";
-import React from "react";
+
 
 const NavBar = () => {
   return (
-    <AppBar position="fixed" color="secondary">
-      <Toolbar>
-        <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          sx={{ mr: 2 }}
-        ></IconButton>
-        {/* <MenuIcon /> */}
-
-        <Box
-          display="flex"
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <Link
-            to={"/henrycollege"}
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1 }}
-          >
+      <AppBar position="fixed" color="secondary">
+        <Toolbar>           
+          <Link to={"/henrycollege"}>            
             <img
-              style={{ width: "45px" }}
+              style={{ width: "45px"}}
               src="https://assets.soyhenry.com/logos/ISOLOGO_HENRY_BLACK.png"
               alt="logo"
             />
-          </Link>
-
-          <Link
-            to={"/henrycollege"}
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1 }}
-          >
-            <Typography color="black" component="div" sx={{ flexGrow: 1 }}>
+          </Link>          
+            <Typography color="black" variant='h6'sx={{ flexGrow : 1, mr : 25}}>
               | College
-            </Typography>
+            </Typography>       
+          <Link to={'/'} color="inherit">
+            <Button sx={{mr: 2, color:'black', bgcolor:'#f5f5f5'}}color='inherit' >Henry</Button>
           </Link>
-        </Box>
-
-        <Box
-          display="flex"
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <Link to={"/"}>
-            <Button sx={{ mr: 2 }} color="warning">
-              Henry
-            </Button>
-          </Link>
-
-          <Link to={"/henrycollege/courses"}>
-            <Button sx={{ mr: 2 }} color="warning">
+          <Link to={"/henrycollege/courses"}color="inherit">
+             <Button sx={{mr: 2, color:'black', bgcolor:'#f5f5f5'}} color="inherit">
               Cursos
             </Button>
           </Link>
-
-          <Button sx={{ mr: 2 }} color="inherit">
-            FAQs
-          </Button>
-          <Button sx={{ mr: 2 }} color="inherit">
-            Nosotros
-          </Button>
-          <Button
-            sx={{ mr: 2, bgcolor: "#ffff00", color: "#212121" }}
-            variant="contained"
-          >
-            Crear Cuenta
-          </Button>
-
-          <Link to={"/henrycollege/courses/iniciarsesion"}>
-            <Button
-              sx={{ mr: 2, bgcolor: "#212121", color: "#fffde7" }}
-              variant="contained"
-            >
-              Iniciar sesión
+          <Link to={"/henrycollege/nosotros"}color="inherit">
+             <Button sx={{mr: 2, color:'black', bgcolor:'#f5f5f5'}} color="inherit">
+              Nosotros
             </Button>
           </Link>
-        </Box>
-      </Toolbar>
-    </AppBar>
-  );
-};
-
+          <Link to={"/dashboard"}color="inherit">
+             <Button sx={{mr: 2, color:'black', bgcolor:'#f5f5f5'}} color="inherit">
+              Dashboard
+            </Button>
+          </Link>
+          <Link to={'/henrycollege/register'}>
+            <Button sx={{mr: 2 , bgcolor:'#ffff00',color:'#212121'}} variant="contained">Crear Cuenta</Button>
+          </Link>
+          <Link to={"/henrycollege/iniciarsesion"}>
+            <Button sx={{ mr: 2 ,bgcolor:'#212121',color:'#fffde7'}} variant="contained">Iniciar sesión</Button>
+          </Link>
+        </Toolbar>
+      </AppBar>
+  )
+}
 export default NavBar;
