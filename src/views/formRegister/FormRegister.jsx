@@ -2,22 +2,26 @@ import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import * as React from 'react';
-import { addUser } from '../../redux/slices/Slices';
+import { postNewUser } from '../../redux/store/slices/users/getAllUsers';
 import { useDispatch } from 'react-redux';
 
 const FormRegister=()=> {
 
-  const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
     const [input, setInput] = React.useState({
-        id : 0,
-        nombre : '',
-        apellido : '',
-        correo: '',
-        telefono: '',
-        contraseña: '',
-        confirm_contraseña: ''        
+        firstName : '',
+        lastName : '',
+        email: '',
+        phone: '',
+        password: ''               
     });
+    const [confirmPas, setConfirmPas] = React.useState('')
+
+    const onConfirmPass = (event)=>{
+      event.preventDefault()
+      setConfirmPas(event.target.value)
+    }
     const onChange = (event) =>{
       event.preventDefault()
       const {name} = event.target
@@ -29,14 +33,9 @@ const FormRegister=()=> {
     }
     const onSubmit = (event) => {
        event.preventDefault()
-       setInput({
-        ...input,
-        id : +1
-       })
-       input.contraseña !== input.confirm_contraseña ?
+       input.password !== confirmPas ?
        alert('La contraseña no coincide') : 
-       dispatch(addUser(input)) 
-       alert('Usuario creado satisfactoriamente')      
+       dispatch(postNewUser(input))             
     }
     
   return (
@@ -52,16 +51,16 @@ const FormRegister=()=> {
         <TextField
           id="outlined-controlled"
           label="Nombre"
-          name='nombre'
-          value={input.nombre}
+          name='firstName'
+          value={input.firstName}
           onChange={onChange}
         />
         <TextField
           sx={{ml:2}}
           id="outlined-controlled"
           label="Apellido"
-          name='apellido'
-          value={input.apellido}
+          name='lastName'
+          value={input.lastName}
           onChange={onChange}
         />
       </div>
@@ -69,17 +68,17 @@ const FormRegister=()=> {
         <TextField
           id="outlined-controlled"
           label="Correo"
-          name='correo'
+          name='email'
           type="email"
-          value={input.correo}
+          value={input.email}
           onChange={onChange}
         />
         <TextField
          sx={{ml:2}}
           id="outlined-controlled"
           label="Telefono"
-          name='telefono'
-          value={input.telefono}
+          name='phone'
+          value={input.phone}
           onChange={onChange}
         />
       </div>
@@ -89,8 +88,8 @@ const FormRegister=()=> {
             label="Contraseña"
             type="password"
             autoComplete="current-password"
-            value={input.contraseña}
-            name="contraseña"
+            value={input.password}
+            name="password"
             onChange={onChange}
           />  
         <TextField
@@ -98,10 +97,10 @@ const FormRegister=()=> {
             id="outlined-password-input"
             label="Repite contraseña"
             type="password"
-            value={input.confirm_contraseña}
+            value={confirmPas}
             name="confirm_contraseña"
             autoComplete="current-password"
-            onChange={onChange}
+            onChange={onConfirmPass}
               />   
       </div>
           <Button 
