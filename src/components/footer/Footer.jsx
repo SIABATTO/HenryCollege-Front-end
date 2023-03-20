@@ -6,6 +6,7 @@ import Stack from '@mui/material/Stack'
 import imageLogo from '../../assets/images/henryBlanco.png'
 import React from 'react'
 
+
 const Footer = () => {
   return (
     <Box sx={{ bgcolor: 'common.black', color: 'white' }}>

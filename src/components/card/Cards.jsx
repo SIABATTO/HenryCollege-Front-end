@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import imageLogo from '../../assets/images/henryBlanco.png'
 import {
   Button,
   Card,
@@ -10,7 +11,7 @@ import {
 } from "@mui/material";
 import { Link } from 'react-router-dom';
   
-  export default function Cards({  name, image,Subject,type }) {
+  export default function Cards({  name, image,level,tags }) {
     return (
       <Link to={"/henrycollege/detalle"}>
         <Card
@@ -31,19 +32,20 @@ import { Link } from 'react-router-dom';
               image={image}            
               display='flex'
 
-            />
-            <CardContent>
-              <Typography>{ name }</Typography>
-              <Typography>{type}</Typography>
-            </CardContent>
-            
-          </CardActionArea>
-    
-          <CardActions >
-            <Button sx={{ maxWidth: 50, ml: '10%' ,bgcolor:'#FFFF01',color:'#fffde7', fontSize: 10}}>Add</Button>
-            <Button sx={{ maxWidth: 50, ml: '10%' ,bgcolor:'#212121',color:'#fffde7', fontSize: 10}}>Remove</Button>
-          </CardActions>
-        </Card>
+          />
+          <CardContent>
+            <Typography>{ name }</Typography>
+            <Typography>{tags}</Typography>
+            <Typography>Nivel: {level}</Typography>
+          </CardContent>
+          
+        </CardActionArea>
+  
+        <CardActions >
+          <Button sx={{ maxWidth: 50, ml: '10%' ,bgcolor:'#FFFF01',color:'#fffde7', fontSize: 10}}>Ver más</Button>
+          <Button sx={{ maxWidth: 50, ml: '10%' ,bgcolor:'#212121',color:'#fffde7', fontSize: 10}}>Inscribirse</Button>
+        </CardActions>
+      </Card>
       </Link>
     );
   }
