@@ -8,8 +8,9 @@ import {
     CardMedia,
     Typography,
   } from "@mui/material";
+  import React from 'react'
   
-  export default function MyCard({  name, image,level,tags }) {
+  export default function Cards({  name, image,level,tags }) {
     return (
       <Card
         sx={{ 
@@ -31,7 +32,7 @@ import {
 
           />
           <CardContent>
-            <Typography>{ name }</Typography>
+            <Typography>{name}</Typography>
             <Typography>{tags}</Typography>
             <Typography>Nivel: {level}</Typography>
           </CardContent>
