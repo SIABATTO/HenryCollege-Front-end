@@ -1,3 +1,4 @@
+import React from 'react';
 import imageLogo from '../../assets/images/henryBlanco.png'
 import {
     Button,
@@ -9,7 +10,7 @@ import {
     Typography,
   } from "@mui/material";
   
-  export default function MyCard({  name, image,level,tags }) {
+  export default function Cards({  name, image,level,tags }) {
     return (
       <Card
         sx={{ 

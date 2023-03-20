@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect } from "react";
-import MyCard from "../Card/Cards";
 import styles from "./CardContainer.module.css";
 import { getAllCourses } from "../../redux/store/slices/courses/getAllCourses";
+import Cards from "../card/Cards";
 
 const CardsContainer = ({ id, name, image, level, tags }) => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const CardsContainer = ({ id, name, image, level, tags }) => {
       {courses.length && courses.map((course) => {
         return (
           <div key={course.id}>
-            <MyCard
+            <Cards
               id={course.id}
               name={course.curse_name}
               tags={course.tags}

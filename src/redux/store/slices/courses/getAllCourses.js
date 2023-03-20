@@ -34,25 +34,25 @@ export const postNewCourse = (course) => {
 //Get courses by ID
 
 export const getCoursesById = (id) => {
-    return async (dispatch) => {
-      try {
-        let res = await axios.get(`${URL}/course/${id}`);
-        dispatch(getCourseById(res.data));
-      } catch (error) {
-        console.log("error_redux", error);
-      }
-    };
+  return async (dispatch) => {
+    try {
+      let res = await axios.get(`${URL}/course/${id}`);
+      dispatch(getCourseById(res.data));
+    } catch (error) {
+      console.log("error_redux", error);
+    }
   };
+};
 
-  //Get courses by Name
+//Get courses by Name
 
-  export const getCoursesByName = (name) => {
-    return async (dispatch) => {
-      try {
-        let res = await axios.get(`${URL}/course?name_like=${name}`);
-        dispatch(setcoursesList(res.data));
-      } catch (error) {
-        console.log("error_redux", error);
-      }
-    };
+export const getCoursesByName = (name) => {
+  return async (dispatch) => {
+    try {
+      let res = await axios.get(`${URL}/course?name_like=${name}`);
+      dispatch(setcoursesList(res.data));
+    } catch (error) {
+      console.log("error_redux", error);
+    }
   };
+};

@@ -3,6 +3,7 @@ import './App.css'
 import NavBar from './components/navBar/NavBar'
 import { About, Detail, Form, Home, Landing, SubLanding, UserDashboard } from './views'
 import FormRegister from './views/formRegister/FormRegister'
+import React from "react"
 
 function App() {
 
