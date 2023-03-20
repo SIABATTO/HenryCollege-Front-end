@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useDispatch } from "react-redux";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import { Box } from "@mui/material";
@@ -8,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
+import { getCoursesByName } from "../../redux/store/slices/courses/getAllCourses";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -52,6 +54,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchBar() {
+
+  const dispatch = useDispatch();
+  const [searchText, setSearchText] = React.useState("");
+
+  const handleSearch = (event) => {
+    const text = event.target.value;
+    setSearchText(text);
+    dispatch(getCoursesByName(text));
+  };
+
   return (
     <Box>
       <AppBar position="static" color="secondary">
@@ -79,6 +91,8 @@ export default function SearchBar() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
+              value={searchText}
+              onChange={handleSearch}
             />
           </Search>
         </Toolbar>

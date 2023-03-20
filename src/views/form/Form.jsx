@@ -12,7 +12,7 @@ import {
   IconButton,
 } from "@mui/material";
 import styles from "./Form.module.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LoadingButton from '@mui/lab/LoadingButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
@@ -27,9 +27,17 @@ function Form() {
   const { email, password } = formData;
 
   const handleOnChange = (e) => {
-    // console.log([e.target.name], e.target.value)
-    setFormData({...formData, [e.target.name]: e.target.value});
+    const { name, value } = e.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value
+    }));
   }
+
+  // const handleOnChange = (e) => {
+  //   // console.log([e.target.name], e.target.value)
+  //   setFormData({...formData, [e.target.name]: e.target.value});
+  // }
 
   const handleSubmit = (email, password) => {
     console.log(email, password);
@@ -47,6 +55,22 @@ function Form() {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+
+  useEffect(() => {
+    // Retrieve form data from localStorage, if available
+    const storedFormData = JSON.parse(localStorage.getItem("formData"));
+
+    if (storedFormData) {
+      console.log("Retrieved form data from local storage:", storedFormData);
+      setFormData(storedFormData);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Save form data to localStorage whenever it changes
+    localStorage.setItem("formData", JSON.stringify(formData));
+    console.log("Saved form data to local storage:", formData);
+  }, [formData]);
 
   return (
     <div className={styles.container}>

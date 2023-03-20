@@ -9,7 +9,7 @@ import {
     Typography,
   } from "@mui/material";
   
-  export default function MyCard({  name, image,Subject,type }) {
+  export default function MyCard({  name, image,level,tags }) {
     return (
       <Card
         sx={{ 
@@ -32,14 +32,15 @@ import {
           />
           <CardContent>
             <Typography>{ name }</Typography>
-            <Typography>{type}</Typography>
+            <Typography>{tags}</Typography>
+            <Typography>Nivel: {level}</Typography>
           </CardContent>
           
         </CardActionArea>
   
         <CardActions >
-          <Button sx={{ maxWidth: 50, ml: '10%' ,bgcolor:'#FFFF01',color:'#fffde7', fontSize: 10}}>Add</Button>
-          <Button sx={{ maxWidth: 50, ml: '10%' ,bgcolor:'#212121',color:'#fffde7', fontSize: 10}}>Remove</Button>
+          <Button sx={{ maxWidth: 50, ml: '10%' ,bgcolor:'#FFFF01',color:'#fffde7', fontSize: 10}}>Ver más</Button>
+          <Button sx={{ maxWidth: 50, ml: '10%' ,bgcolor:'#212121',color:'#fffde7', fontSize: 10}}>Inscribirse</Button>
         </CardActions>
       </Card>
     );
