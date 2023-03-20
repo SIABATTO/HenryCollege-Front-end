@@ -22,7 +22,7 @@ function App() {
           <Route exact path="/henrycollege/register" element={<FormRegister/>} />
           <Route exact path="/henrycollege/iniciarsesion" element={<Form/>} />
           <Route exact path="/henrycollege/nosotros" element={<About/>} />          
-          <Route exact path="/henrycollege/detail" element={<Detail/>} />          
+          <Route exact path="/henrycollege/detalle" element={<Detail/>} />          
         </Routes> 
 
         

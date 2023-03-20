@@ -1,5 +1,5 @@
 // import { useSelector } from "react-redux";
-import MyCard from "../Card/Cards";
+import Cards from "../card/Cards";
 import styles from "./CardContainer.module.css";
 
 const CardsContainer = ({ id, name, image, Subject, type }) => {
@@ -56,7 +56,7 @@ const CardsContainer = ({ id, name, image, Subject, type }) => {
       {course.map((course) => {
         return (
           <div key={course.id}>
-            <MyCard
+            <Cards
               id={course.id}
               name={course.curse_name}
               type={course.type}
