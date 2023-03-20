@@ -1,45 +1,51 @@
+import React from 'react';
 import imageLogo from '../../assets/images/henryBlanco.png'
 import {
-    Button,
-    Card,
-    CardActionArea,
-    CardActions,
-    CardContent,
-    CardMedia,
-  } from "@mui/material";
+  Button,
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography
+} from "@mui/material";
+import { Link } from 'react-router-dom';
   
-  export default function MyCard({  name, image,Subject,type }) {
+  export default function Cards({  name, image,level,tags }) {
     return (
-      <Card
-        sx={{ 
-          mt:5,
-          ml:5,
-          transition: "0.2s",
-          "&:hover": {
-            transform: "scale(1.05)",
-          },
-        }}
-      >
-        <CardActionArea>
-          <CardMedia sx={{width:"100%"}}
-            image="https://assets.soyhenry.com/logoOG.png"
-            height='100%'
-            display='flex'
-            width= {100}
+      <Link to={"/henrycollege/detalle"}>
+        <Card
+          sx={{ 
+            mr: 4,
+            maxWidth: 180,
+            height: 220,
+            transition: "0.2s",
+            "&:hover": {
+              transform: "scale(1.05)",
+            },
+          }}
+        >
+          <CardActionArea>
+            <CardMedia
+              sx={{ height: '20%' }}
+              component='img'
+              image={image}            
+              display='flex'
 
           />
           <CardContent>
-            <h2>{ name }</h2>
-            <h3>{type}</h3>
-            <p>{Subject}</p>
+            <Typography>{ name }</Typography>
+            <Typography>{tags}</Typography>
+            <Typography>Nivel: {level}</Typography>
           </CardContent>
           
         </CardActionArea>
   
         <CardActions >
-          <Button variant="contained">Add</Button>
-          <Button sx={{ mr: 2 ,bgcolor:'#212121',color:'#fffde7'}}>Remove</Button>
+          <Button sx={{ maxWidth: 50, ml: '10%' ,bgcolor:'#FFFF01',color:'#fffde7', fontSize: 10}}>Ver más</Button>
+          <Button sx={{ maxWidth: 50, ml: '10%' ,bgcolor:'#212121',color:'#fffde7', fontSize: 10}}>Inscribirse</Button>
         </CardActions>
       </Card>
+      </Link>
     );
   }

@@ -8,8 +8,7 @@ import CardsContainer from "../../components/cardContainer/CardContainer";
 
 function Home() {
   return (
-    <Box>
-      
+    <Box>      
       <CardsContainer/>
       <Paged/>
       <Footer/>
