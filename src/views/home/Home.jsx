@@ -9,7 +9,7 @@ import CardsContainer from "../../components/cardContainer/CardContainer";
 function Home() {
   return (
     <Box>      
-      <CardsContainer/>
+      {/* <CardsContainer/> */}
       <Paged/>
       <Footer/>
     </Box>

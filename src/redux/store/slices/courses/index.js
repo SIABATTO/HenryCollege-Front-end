@@ -20,15 +20,20 @@ export const coursesSlice = createSlice({
       state.courseById = [state.list.find((course) => course.id === courseId)];
     },
     getCourseByName: (state, action) => {
-      const courseName = action.payload;
-      state.courseByName = state.list.find(
-        (course) => course.name === courseName
-      );
+      state.courseByName = action.payload;
+    },
+    getPageCourse: (state, action) => {
+      state.list = action.payload.results;
     },
   },
 });
 
-export const { setcoursesList, postCourses, getCourseById, getCourseByName } =
-  coursesSlice.actions;
+export const {
+  setcoursesList,
+  postCourses,
+  getCourseById,
+  getCourseByName,
+  getPageCourse,
+} = coursesSlice.actions;
 
 export default coursesSlice.reducer;

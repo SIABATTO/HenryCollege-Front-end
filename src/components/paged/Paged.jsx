@@ -1,28 +1,52 @@
-import React from "react";
-import { Pagination } from "@mui/material";
+import React, { useEffect } from "react";
+import { Box, Pagination } from "@mui/material";
 import { useState } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { changePageCourses } from "../../redux/store/slices/courses/getAllCourses";
+import Cards from "../card/Cards";
 
 const Paged = () => {
+  const dispatch = useDispatch();
+
   const [page, setPage] = useState(1);
   const handleChange = (e, p) => {
     setPage(p);
   };
+  
+  useEffect(() => {
+    dispatch(changePageCourses(page));
+    console.log("courses 1:", courses);
+  }, [dispatch,page]);
+  const courses = useSelector((state) => state.courses.list);
+
   return (
-    <div>
+    <>
+      <div >
+      {courses.length && courses.map((course) => {
+        return (
+          <div key={course.id}>
+            <Cards
+              id={course.id}
+              name={course.name}
+              tags={course.tags}
+              image={course.image}
+              key={course.id}
+              level={course.level}
+            />
+          </div>
+          );
+        })}
+      </div>
       <h1>Esta pagina es {page}</h1>
-      <Pagination
-        count={10}
-        color="secondary"
-        onChange={handleChange}
-        sx={{ 
-            '& .Mui-selected': { color: 'gray' }, 
-            '& .MuiPaginationItem-root': { fontFamily: 'Arial, sans-serif', fontSize: '1.2rem', color: 'white'},
-            '& .MuiPaginationItem-root.Mui-selected': { color: 'black' },
-            '& .css-wjh20t-MuiPagination-ul': { justifyContent: 'center' }, 
-        }}
-      />
-    </div>
+      <Box sx={{ display:'flex', width: '100%', justifyContent:'center'}}>
+        <Pagination
+          count={3}
+          color="standard"
+          onChange={handleChange}
+          variant="outlined"
+        />
+      </Box>    
+    </>
   );
 };
 

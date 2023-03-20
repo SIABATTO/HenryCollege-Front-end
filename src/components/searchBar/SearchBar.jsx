@@ -1,15 +1,15 @@
-import * as React from "react";
-import { useDispatch } from "react-redux";
-import { styled, alpha } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import { Box } from "@mui/material";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import InputBase from "@mui/material/InputBase";
-import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
+import { Box } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import IconButton from "@mui/material/IconButton";
+import InputBase from "@mui/material/InputBase";
+import { alpha, styled } from "@mui/material/styles";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import * as React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { getCoursesByName } from "../../redux/store/slices/courses/getAllCourses";
+import Cards from "../card/Cards";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -64,7 +64,11 @@ export default function SearchBar() {
     dispatch(getCoursesByName(text));
   };
 
+  const courses = useSelector(state=>state.courses.courseByName)
+
+
   return (
+    <>
     <Box>
       <AppBar position="static" color="secondary">
         <Toolbar >
@@ -98,5 +102,22 @@ export default function SearchBar() {
         </Toolbar>
       </AppBar>
     </Box>
+    <Box>
+      {
+        courses?.map(course=>{
+          return <Cards
+          
+                    id={course.id}
+                    name={course.name}
+                    tags={course.tags}
+                    image={course.image}
+                    key={course.id}
+                    level={course.level}
+                  />
+        })
+      }
+    </Box>
+    </>
+
   );
 }

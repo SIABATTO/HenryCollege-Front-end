@@ -6,13 +6,13 @@ import Cards from "../card/Cards";
 
 const CardsContainer = ({ id, name, image, level, tags }) => {
   const dispatch = useDispatch();
-  const courses = useSelector((state) => state.courses.list);
+  // const courses = useSelector((state) => state.courses.list);
   // const isLoading = useSelector((state) => state.courses.isLoading);
 
-  useEffect(() => {
-    dispatch(getAllCourses());
-    console.log("courses 1:", courses);
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getAllCourses());
+  //   console.log("courses 1:", courses);
+  // }, [dispatch]);
 
   return (
     <div className={styles.container}>

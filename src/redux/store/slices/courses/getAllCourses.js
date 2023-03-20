@@ -1,5 +1,11 @@
 import axios from "axios";
-import { setcoursesList, postCourses, getCourseById, getCourseByName } from ".";
+import {
+  setcoursesList,
+  postCourses,
+  getCourseById,
+  getCourseByName,
+  getPageCourse,
+} from ".";
 
 const URL = "http://localhost:3001";
 
@@ -49,8 +55,20 @@ export const getCoursesById = (id) => {
 export const getCoursesByName = (name) => {
   return async (dispatch) => {
     try {
-      let res = await axios.get(`${URL}/course?name_like=${name}`);
-      dispatch(setcoursesList(res.data));
+      let res = await axios.get(`${URL}/course?name=${name}`);
+      dispatch(getCourseByName(res.data.results));
+    } catch (error) {
+      console.log("error_redux", error);
+    }
+  };
+};
+
+export const changePageCourses = (page) => {
+  return async (dispatch) => {
+    try {
+      let res = await axios.get(`${URL}/course?page=${page}`);
+      dispatch(getPageCourse(res.data));
+      console.log("redux", res);
     } catch (error) {
       console.log("error_redux", error);
     }
