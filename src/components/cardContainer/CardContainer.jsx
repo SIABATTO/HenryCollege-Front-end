@@ -1,6 +1,7 @@
 // import { useSelector } from "react-redux";
 import Cards from "../card/Cards";
 import styles from "./CardContainer.module.css";
+import React from "react";
 
 const CardsContainer = ({ id, name, image, Subject, type }) => {
   // const Courses = useSelector((state) => state.allCourses);
@@ -58,11 +59,10 @@ const CardsContainer = ({ id, name, image, Subject, type }) => {
           <div key={course.id}>
             <Cards
               id={course.id}
-              name={course.curse_name}
+              name={course.name}
               type={course.type}
               image={course.image}
               key={course.id}
-              Subject={Subject}
             />
           </div>
         );

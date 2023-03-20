@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
 import imageLogo from '../../assets/images/henryBlanco.png'
-
+import React from 'react'
 
 const Footer = () => {
   return (
