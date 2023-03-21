@@ -21,24 +21,21 @@ const Paged = () => {
 
   return (
     <>
-      <div >
+      <Box sx={{width:'100%', display:'flex', flexWrap:'wrap', mt:'5rem', justifyContent:'center'}}>
       {courses.length && courses.map((course) => {
         return (
-          <div key={course.id}>
             <Cards
               id={course.id}
               name={course.name}
-              tags={course.tags}
+              tags={course.tags[0]}
               image={course.image}
               key={course.id}
               level={course.level}
             />
-          </div>
           );
         })}
-      </div>
-      <h1>Esta pagina es {page}</h1>
-      <Box sx={{ display:'flex', width: '100%', justifyContent:'center'}}>
+      </Box>
+      <Box sx={{ display:'flex', width: '100%', justifyContent:'center', mt:'5rem'}}>
         <Pagination
           count={3}
           color="standard"

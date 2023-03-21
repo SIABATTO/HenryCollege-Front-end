@@ -1,0 +1,8 @@
+.customSelect {
+    border: 1px solid black;
+    border-radius: 4px;
+  };
+  .label{
+  color: black;
+  font-size: 15px;
+  }

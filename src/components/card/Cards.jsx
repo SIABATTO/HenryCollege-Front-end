@@ -1,5 +1,4 @@
 import React from 'react';
-import imageLogo from '../../assets/images/henryBlanco.png'
 import {
     Button,
     Card,
@@ -34,18 +33,18 @@ import {
 
           />
           <CardContent>
-            <Typography>{name}</Typography>
+            <Typography variant="h6">{ name }</Typography>
             <Typography>{tags}</Typography>
             <Typography>Nivel: {level}</Typography>
           </CardContent>
           
-        </CardActionArea>
-  
-        <CardActions >
-          <Button sx={{ maxWidth: 50, ml: '10%' ,bgcolor:'#FFFF01',color:'#fffde7', fontSize: 10}}>Ver más</Button>
-          <Button sx={{ maxWidth: 50, ml: '10%' ,bgcolor:'#212121',color:'#fffde7', fontSize: 10}}>Inscribirse</Button>
-        </CardActions>
-      </Card>
+          </CardActionArea>
+    
+          <CardActions >
+            <Button sx={{ maxWidth: 50, ml: '10%' ,bgcolor:'#FFFF01',color:'#fffde7', fontSize: 10}}>Ver más</Button>
+            <Button sx={{ maxWidth: 50, ml: '10%' ,bgcolor:'#212121',color:'#fffde7', fontSize: 10}}>Inscribirse</Button>
+          </CardActions>
+        </Card>
       </Link>
     );
   }
