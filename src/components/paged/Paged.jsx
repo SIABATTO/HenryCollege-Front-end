@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changePageCourses } from "../../redux/store/slices/courses/getAllCourses";
 import Cards from "../card/Cards";
+import Filters from "../../components/filters/Filters";
 
 const Paged = () => {
   const dispatch = useDispatch();
@@ -43,6 +44,9 @@ const Paged = () => {
           variant="outlined"
         />
       </Box>    
+      <Box>
+        <Filters/>
+      </Box>
     </>
   );
 };
