@@ -9,6 +9,7 @@ import {
     CardMedia,
     Typography,
   } from "@mui/material";
+  import { Link } from 'react-router-dom';
   
   export default function Cards({  name, image,level,tags }) {
     return (
