@@ -3,6 +3,7 @@ import React from "react";
 import imageGirl from "../../assets/images/LandingGirl.jpg";
 import Footer from "../../components/footer/Footer";
 import styles from "./SubLanding.module.css";
+import Filters from "../../components/filters/Filters";
 import SearchBar from "../../components/searchBar/SearchBar";
 
 function SubLanding() {
@@ -22,6 +23,9 @@ function SubLanding() {
           <Box>
             <img style={{ width: "100%" }} src={imageGirl} alt="logo" />
           </Box>
+        </Box>
+        <Box>
+          <Filters/>
         </Box>
       </Box>
       <SearchBar />
