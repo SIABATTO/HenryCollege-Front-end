@@ -100,10 +100,10 @@ export const filtersByLevel = (level) => {
     }
   };
 };
-export const filtersByMin= (minDuration) => {
+export const filtersByMin= (sortDuration) => {
   return async (dispatch) => {
     try {
-      let res = await axios.get(`${URL}/course?minDuration=${minDuration}`);
+      let res = await axios.get(`${URL}/course?sortDuration=${sortDuration}`);
       dispatch(setcoursesList(res.data));//setcoursesList me actualiza el estado global 
       console.log("redux", res);
     } catch (error) {

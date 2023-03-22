@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { InputLabel, Select } from "@material-ui/core";
 import Style from "./../filters/Filter.module.css";
-import { FormControl, Grid, MenuItem, makeStyles } from "@mui/material";
+import { FormControl, Grid, MenuItem, Box } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
+
 import {
-  
   getAllCourses,
   filtersByAlpha,
   filtersByLevel,
   filtersByMin,
-
 } from "../../redux/store/slices/courses/getAllCourses";
-
 
 const Filters = () => {
   const selectWidth = "50%";
@@ -36,14 +34,21 @@ const Filters = () => {
     dispatch(filtersByLevel(element.target.value));
   };
 
-  const filtersMin=(element)=>{
-    if (element.target.value === "min") dispatch(filtersByMin(element.target.value));
+  const filtersMin = (element) => {
+    if (element.target.value === "duration")
+      dispatch(filtersByMin(element.target.value));
   };
 
   return (
-    <Grid container spacing={5} sx={{mt:"5rem", display:"flex", flexWrap:"wrap"}} >
-      <Grid item xs={3}>
-
+    <Box
+      container
+      spacing={5}
+      display="inline-flex"
+      flexDirection="row"
+      justifycontent="center"
+      alignItems="center"
+    >
+      <Box item xs={5}>
         <FormControl
           className={`${Style.customSelect}`}
           style={{ width: selectWidth }}
@@ -58,8 +63,9 @@ const Filters = () => {
             <MenuItem value="all">All</MenuItem>
           </Select>
         </FormControl>
-      </Grid>
-      <Grid item xs={3}>
+      </Box>
+
+      <Box item xs={5}>
         <FormControl
           className={`${Style.MuiFormControl} ${Style.root}`}
           style={{ width: selectWidth }}
@@ -75,8 +81,9 @@ const Filters = () => {
             <MenuItem value="desc">Descending (Z-A)</MenuItem>
           </Select>
         </FormControl>
-      </Grid>
-      <Grid item xs={3}>
+      </Box>
+
+      <Box item xs={5}>
         <FormControl
           className={`${Style.MuiFormControl} ${Style.root}`}
           style={{ width: selectWidth }}
@@ -92,20 +99,28 @@ const Filters = () => {
             <MenuItem value="intermedio">intermedio </MenuItem>
             <MenuItem value="alto">alto</MenuItem>
           </Select>
+          </FormControl>
+          </Box>
 
+          <Box>
+          <FormControl
+          className={`${Style.MuiFormControl} ${Style.root}`}
+          style={{ width: selectWidth }}
+        >
           <InputLabel>duration</InputLabel>
-          <Select sx={{ width:"20%", display:"flex", flexWrap:"wrap"}}
+          <Select
             onChange={filtersMin}
             className={`${Style.MuiSelect} ${Style.root} ${Style.customSelect}`}
             labelId="tercer-select-label"
-            id="tercer-select"  
-          >  
-           <MenuItem sx={{width:"5%"}} value="min">min</MenuItem>
-           <MenuItem value="max">max</MenuItem>
-          </Select> 
+            id="tercer-select"
+          >
+            <MenuItem value="min">min</MenuItem>
+            <MenuItem value="max">mix</MenuItem>
+          </Select>
         </FormControl>
-      </Grid>
-    </Grid>
+      </Box>
+      </Box>
+
   );
 };
 
