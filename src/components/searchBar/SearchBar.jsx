@@ -33,7 +33,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   pointerEvents: "none",
   display: "flex",
   alignItems: "center",
-  justifyContent: "center",
+  justifycontent: "center",
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -54,7 +54,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchBar() {
-
   const dispatch = useDispatch();
   const [searchText, setSearchText] = React.useState("");
 
@@ -64,60 +63,58 @@ export default function SearchBar() {
     dispatch(getCoursesByName(text));
   };
 
-  const courses = useSelector(state=>state.courses.courseByName)
-
+  const courses = useSelector((state) => state.courses.courseByName);
 
   return (
     <>
-    <Box>
-      <AppBar position="static" color="secondary">
-        <Toolbar >
-          <IconButton
-          color="secondary"
-            size="large"
-            edge="start"
-            // color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          ></IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
-            ¿Que quieres aprender?
-          </Typography>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-              value={searchText}
-              onChange={handleSearch}
+      <Box>
+        <AppBar position="static" color="secondary" sx={{ bgcolor: 'White' }}>
+          <Toolbar>
+            <IconButton
+              color="secondary"
+              size="large"
+              edge="start"
+              // color="inherit"
+              aria-label="open drawer"
+              sx={{ mr: 2 }}
+            ></IconButton>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+              color="tertiary"
+            >
+              ¿Que quieres aprender?
+            </Typography>
+            <Search  sx={{ bgcolor: 'White' }}>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+                value={searchText}
+                onChange={handleSearch}
+              />
+            </Search>
+          </Toolbar>
+        </AppBar>
+      </Box>
+      <Box margin={5}>
+        {courses?.map((course) => {
+          return (
+            <Cards
+              id={course.id}
+              name={course.name}
+              tags={course.tags}
+              image={course.image}
+              key={course.id}
+              level={course.level}
             />
-          </Search>
-        </Toolbar>
-      </AppBar>
-    </Box>
-    <Box>
-      {
-        courses?.map(course=>{
-          return <Cards
-          
-                    id={course.id}
-                    name={course.name}
-                    tags={course.tags}
-                    image={course.image}
-                    key={course.id}
-                    level={course.level}
-                  />
-        })
-      }
-    </Box>
+          );
+        })}
+      </Box>
     </>
-
   );
 }

@@ -48,8 +48,8 @@ const avatar = [
         link: "https://www.linkedin.com/in/alejandra-betancourt-quiroga-183096177/",
         imageUrl: imageGrupo1},
       {
-        name: "Jerrson ",
-        link: "https://www.linkedin.com/in/alejandra-betancourt-quiroga-183096177/",
+        name: "Jerson Gonzalez",
+        link: "https://www.linkedin.com/in/jerson-gonz%C3%A1lez-estrada-884399250/",
         imageUrl: imageGrupo7},
 ]
 const Item = styled(Paper)(({ theme }) => ({
@@ -81,22 +81,20 @@ export default function Elevation() {
     <Typography variant="h4" gutterBottom>Equipo Henry College</Typography>
     <Grid container spacing={2} >
       {[lightTheme].map((theme, index) => (
-        <Grid item xs={12} key={index}>
+        <Grid item xs={30} key={index}>
           <ThemeProvider theme={theme}>
             <Box
               sx={{
-                p: 6,
-                mt:6,
                 mb:6,
                 bgcolor: 'background.default',
                 display: 'grid',
                 gridTemplateColumns: { md: '1fr 1fr 1fr 1fr' },
                 gap: 6,
-                height: 250
+                height: 350
               }}
             >
               {avatar.map((elevation) => (
-                <Item key={elevation} elevation={elevation} sx={{width : 300}}>
+                <Item key={elevation} elevation={elevation} sx={{width : 200}}>
                   <Avatar src={elevation.imageUrl} sx={{ width: 150, height: 150 }} />
                   <Typography>{elevation.name}</Typography>
                   <a href={elevation.link}target="_blank" rel="noopener noreferrer">
