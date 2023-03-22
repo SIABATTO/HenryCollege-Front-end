@@ -10,7 +10,7 @@ function Landing() {
     <Box>
         <NavBarLanding/>
         <Box className={styles.container}>
-          <Box className={styles.h}>
+          <Box className={styles.h} margin={3}>
             <h1>Invertimos en tu educación</h1>
             <h2>Comienza a estudiar Desarrollo Full Stack o Data Science</h2>
             <p>Despega tu carrera en tecnología. Estudia a remoto y de manera intensiva. ¿Y lo mejor? Solo nos pagas cuando consigues un nuevo trabajo.</p>

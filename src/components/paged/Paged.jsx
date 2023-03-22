@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changePageCourses } from "../../redux/store/slices/courses/getAllCourses";
 import Cards from "../card/Cards";
+import Filters from "../../components/filters/Filters";
 
 const Paged = () => {
   const dispatch = useDispatch();
@@ -12,18 +13,47 @@ const Paged = () => {
   const handleChange = (e, p) => {
     setPage(p);
   };
-  
+
   useEffect(() => {
     dispatch(changePageCourses(page));
     console.log("courses 1:", courses);
-  }, [dispatch,page]);
+  }, [dispatch, page]);
   const courses = useSelector((state) => state.courses.list);
 
   return (
     <>
-      <Box sx={{width:'100%', display:'flex', flexWrap:'wrap', mt:'5rem', justifyContent:'center'}}>
-      {courses.length && courses.map((course) => {
-        return (
+      <Box
+        sx={{
+          display: "flex",
+          m: "2rem",
+          width: "100%",
+          justifyContent: "center",
+          mt: "5rem",
+        }}
+      >
+        <Pagination
+          count={3}
+          color="tertiary"
+          onChange={handleChange}
+          variant="outlined"
+          justifycontent="center"
+        />
+      </Box>
+      <Box>
+        <Filters />
+      </Box>
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          flexWrap: "wrap",
+          m: "3rem",
+          justifyContent: "center",
+        }}
+      >
+        {Array.isArray(courses) &&
+          courses.length > 0 &&
+          courses.map((course) => (
             <Cards
               id={course.id}
               name={course.name}
@@ -32,17 +62,8 @@ const Paged = () => {
               key={course.id}
               level={course.level}
             />
-          );
-        })}
+          ))}
       </Box>
-      <Box sx={{ display:'flex', width: '100%', justifyContent:'center', mt:'5rem'}}>
-        <Pagination
-          count={3}
-          color="standard"
-          onChange={handleChange}
-          variant="outlined"
-        />
-      </Box>    
     </>
   );
 };
