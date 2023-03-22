@@ -15,14 +15,8 @@ const NavBarLanding = () => {
             alt="logo"
           />
           <Typography variant="h6" sx={{ marginLeft: "3%" }}>
-            <Link to={"/henrycollege"}>
-              <Button sx={{
-                  bgcolor: "#000000",
-                  "&:hover": {
-                    bgcolor: "#F0F0F0",
-                    color: "#000000",
-                  },
-                }} color="secondary">
+            <Link to={"/courses"}>
+              <Button sx={{ mr: 2 ,bgcolor:'#212121',color:'#fffde7'}} color="primary">
               Henry College
               </Button>
             </Link>
