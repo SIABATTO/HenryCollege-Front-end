@@ -1,71 +1,112 @@
-import React from 'react';
-import { InputLabel, Select } from '@material-ui/core';
-import Style from './../filters/Filter.module.css';
-import { FormControl, Grid, MenuItem } from '@mui/material';
+import React, { useEffect, useState } from "react";
+import { InputLabel, Select } from "@material-ui/core";
+import Style from "./../filters/Filter.module.css";
+import { FormControl, Grid, MenuItem, makeStyles } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  
+  getAllCourses,
+  filtersByAlpha,
+  filtersByLevel,
+  filtersByMin,
 
-function Filters() {
-  const selectWidth = '40%'; // Set the width value here
+} from "../../redux/store/slices/courses/getAllCourses";
+
+
+const Filters = () => {
+  const selectWidth = "50%";
+  const dispatch = useDispatch();
+  //const Students = useSelector((state) => state.Students);
+
+  useEffect(() => {
+    dispatch(getAllCourses());
+  }, [dispatch]);
+
+  const filterCreator = (element) => {
+    if (element.target.value === "all")
+      dispatch(getAllCourses(element.target.value));
+  };
+  const filterAlpha = (element) => {
+    if (element.target.value === "asc")
+      dispatch(filtersByAlpha(element.target.value));
+    if (element.target.value === "desc")
+      dispatch(filtersByAlpha(element.target.value));
+  };
+  const filterLevel = (element) => {
+    dispatch(filtersByLevel(element.target.value));
+  };
+
+  const filtersMin=(element)=>{
+    if (element.target.value === "min") dispatch(filtersByMin(element.target.value));
+  };
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={5} sx={{mt:"5rem", display:"flex", flexWrap:"wrap"}} >
       <Grid item xs={3}>
-        <FormControl className={`${Style.MuiFormControl} ${Style.root}`} style={{ width: selectWidth }}>
+
+        <FormControl
+          className={`${Style.customSelect}`}
+          style={{ width: selectWidth }}
+        >
           <InputLabel id="select-label">Name Of Course</InputLabel>
           <Select
-            className={`${Style.MuiSelect} ${Style.root} ${Style.customSelect}`}
+            onChange={filterCreator}
+            className={`${Style.customSelect}  ${Style.customSelect}`}
             labelId="select-label"
             id="select"
           >
-            <MenuItem value="option1">Opción 1</MenuItem>
-            <MenuItem value="option2">Opción 2</MenuItem>
-            <MenuItem value="option3">Opción 3</MenuItem>
+            <MenuItem value="all">All</MenuItem>
           </Select>
         </FormControl>
       </Grid>
       <Grid item xs={3}>
-        <FormControl className={`${Style.MuiFormControl} ${Style.root}`} style={{ width: selectWidth }}>
-          <InputLabel id="segundo-select-label">Duration</InputLabel>
+        <FormControl
+          className={`${Style.MuiFormControl} ${Style.root}`}
+          style={{ width: selectWidth }}
+        >
+          <InputLabel id="segundo-select-label">Alphabetical</InputLabel>
           <Select
+            onChange={filterAlpha}
             className={`${Style.MuiSelect} ${Style.root} ${Style.customSelect}`}
             labelId="segundo-select-label"
             id="segundo-select"
           >
-            <MenuItem value="option1">Opción 1</MenuItem>
-            <MenuItem value="option2">Opción 2</MenuItem>
-            <MenuItem value="option3">Opción 3</MenuItem>
+            <MenuItem value="asc">Ascending (A-Z)</MenuItem>
+            <MenuItem value="desc">Descending (Z-A)</MenuItem>
           </Select>
         </FormControl>
       </Grid>
       <Grid item xs={3}>
-        <FormControl className={`${Style.MuiFormControl} ${Style.root}`} style={{ width: selectWidth }}>
+        <FormControl
+          className={`${Style.MuiFormControl} ${Style.root}`}
+          style={{ width: selectWidth }}
+        >
           <InputLabel id="tercer-select-label">Level</InputLabel>
           <Select
+            onChange={filterLevel}
             className={`${Style.MuiSelect} ${Style.root} ${Style.customSelect}`}
             labelId="tercer-select-label"
             id="tercer-select"
           >
-            <MenuItem value="option1">Opción 1</MenuItem>
-            <MenuItem value="option2">Opción 2</MenuItem>
-            <MenuItem value="option3">Opción 3</MenuItem>
+            <MenuItem value="Basico">Basico</MenuItem>
+            <MenuItem value="intermedio">intermedio </MenuItem>
+            <MenuItem value="alto">alto</MenuItem>
           </Select>
-        </FormControl>
-      </Grid>
-      <Grid item xs={3}>
-        <FormControl className={`${Style.MuiFormControl} ${Style.root}`} style={{ width: selectWidth }}>
-          <InputLabel id="cuarto-select-label">Price</InputLabel>
-          <Select
+
+          <InputLabel>duration</InputLabel>
+          <Select sx={{ width:"20%", display:"flex", flexWrap:"wrap"}}
+            onChange={filtersMin}
             className={`${Style.MuiSelect} ${Style.root} ${Style.customSelect}`}
-            labelId="cuarto-select-label"
-            id="cuarto-select"
-          >
-            <MenuItem value="option1">Opción 1</MenuItem>
-            <MenuItem value="option2">Opción 2</MenuItem>
-            <MenuItem value="option3">Opción 3</MenuItem>
-          </Select>
+            labelId="tercer-select-label"
+            id="tercer-select"  
+          >  
+           <MenuItem sx={{width:"5%"}} value="min">min</MenuItem>
+           <MenuItem value="max">max</MenuItem>
+          </Select> 
         </FormControl>
       </Grid>
     </Grid>
   );
-}
+};
 
 export default Filters;

@@ -6,6 +6,8 @@ import {
   getCourseByName,
   getPageCourse,
 } from ".";
+export const FILTER_BY_CREATOR = "FILTER_BY_CREATOR";
+export const GET_FILTER = "GET_FILTER";
 
 const URL = "http://localhost:3001";
 
@@ -68,6 +70,41 @@ export const changePageCourses = (page) => {
     try {
       let res = await axios.get(`${URL}/course?page=${page}`);
       dispatch(getPageCourse(res.data));
+      console.log("redux", res);
+    } catch (error) {
+      console.log("error_redux", error);
+    }
+  };
+};
+//Filtro por Orden ALfabetico
+export const filtersByAlpha = (sortName) => {
+  return async (dispatch) => {
+    try {
+      let res = await axios.get(`${URL}/course?sortName=${sortName}`);
+      dispatch(setcoursesList(res.data));
+      console.log("redux", res);
+    } catch (error) {
+      console.log("error_redux", error);
+    }
+  };
+};
+//Filtros por niveles 
+export const filtersByLevel = (level) => {
+  return async (dispatch) => {
+    try {
+      let res = await axios.get(`${URL}/course?level=${level}`);
+      dispatch(setcoursesList(res.data));//setcoursesList me actualiza el estado global 
+      console.log("redux", res);
+    } catch (error) {
+      console.log("error_redux", error);
+    }
+  };
+};
+export const filtersByMin= (minDuration) => {
+  return async (dispatch) => {
+    try {
+      let res = await axios.get(`${URL}/course?minDuration=${minDuration}`);
+      dispatch(setcoursesList(res.data));//setcoursesList me actualiza el estado global 
       console.log("redux", res);
     } catch (error) {
       console.log("error_redux", error);
