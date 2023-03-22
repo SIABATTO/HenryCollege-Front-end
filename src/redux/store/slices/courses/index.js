@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit"
+
 
 export const coursesSlice = createSlice({
   name: "courses",
@@ -27,6 +28,8 @@ export const coursesSlice = createSlice({
     },
   },
 });
+
+
 
 export const {
   setcoursesList,
