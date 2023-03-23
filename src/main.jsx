@@ -33,7 +33,6 @@ const theme = createTheme({
 const persistor = persistStore(store)
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
     <PersistGate persistor={persistor}>
       <Provider store={store}>
         <BrowserRouter>
@@ -43,5 +42,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </BrowserRouter>
       </Provider>
     </PersistGate>
-  </React.StrictMode>
 );
