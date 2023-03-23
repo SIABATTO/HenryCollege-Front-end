@@ -91,8 +91,6 @@ function Form() {
                     type="text"
                     margin="dense"
                     fullWidth
-                    variant="outlined"
-                    helperText="Campo obligatorio"
                     sx={{ width: 300 }}
                     color="tertiary"
                   />

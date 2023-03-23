@@ -7,10 +7,10 @@ import Paged from "../../components/paged/Paged";
 import Filter from "../../components/filters/Filters";
 function Home() {
   return (
-    <Box>  
-    <Filter/>    
-      <Paged/>
-      <Footer/>
+    <Box>
+      <Filter />
+      <Paged />
+      <Footer />
     </Box>
   );
 }

@@ -33,7 +33,7 @@ export default function Cards({ name, image, level, tags }) {
           sx={{
             mr: 4,
             fontSize: 8,
-            maxWidth: 250,
+            maxWidth: 300,
             height: 220,
             transition: "0.2s",
             "&:hover": {
@@ -81,27 +81,32 @@ export default function Cards({ name, image, level, tags }) {
             alignItems="center"
           >
             <CardActions>
-              <Button
-                width={200}
-                sx={{ fontSize: "12px", bgcolor: "#FFFF01" }}
-                color="tertiary"
-              >
-                Ver más
-              </Button>
-              <Button
-                width={200}
-                sx={{
-                  fontSize: "12px",
-                  bgcolor: "#000000",
-                  "&:hover": {
-                    bgcolor: "#F0F0F0",
-                    color: "#000000",
-                  },
-                }}
-                color="secondary"
-              >
-                Inscribirse
-              </Button>
+              <Box width={100}>
+                <Button
+                  color="tertiary"
+                  sx={{ fontSize: "10px", bgcolor: "#FFFF01" }}
+                >
+                  Comprar
+                </Button>
+              </Box>
+
+              <Box width={100}>
+                <Link to={"/henrycollege/registrarse"} >
+                  <Button
+                    sx={{
+                      fontSize: "10px",
+                      bgcolor: "#000000",
+                      "&:hover": {
+                        bgcolor: "#F0F0F0",
+                        color: "#000000",
+                      },
+                    }}
+                    color="secondary"
+                  >
+                    Registrarse
+                  </Button>
+                </Link>
+              </Box>
             </CardActions>
           </Box>
         </Card>

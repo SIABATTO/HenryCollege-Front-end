@@ -28,7 +28,7 @@ const Paged = () => {
           m: "2rem",
           width: "100%",
           justifyContent: "center",
-          mt: "5rem",
+          mt: "2rem",
         }}
       >
         <Pagination
@@ -39,9 +39,7 @@ const Paged = () => {
           justifycontent="center"
         />
       </Box>
-      <Box>
-        <Filters />
-      </Box>
+      
       <Box
         sx={{
           width: "100%",

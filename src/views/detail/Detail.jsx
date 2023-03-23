@@ -4,6 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import { useTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import CustomizedRating from "../../components/Rating/Rating";
 
 export default function Detail() {
   const courses = [
@@ -45,7 +46,7 @@ export default function Detail() {
           ></iframe>
         </Box>
       </Box>
-      <Box sx={{ display: "flex", flexDirection: "column"}} m="30px" >
+      <Box sx={{ display: "flex", flexDirection: "column" }} m="30px">
         <CardContent sx={{ flex: "1 0 auto" }}>
           <Typography component="div" variant="h5">
             {courses[0].name}
@@ -55,7 +56,8 @@ export default function Detail() {
             color="text.secondary"
             component="div"
           >
-            Profesor: {`${courses[0].teacher[0].firstName} ${courses[0].teacher[0].lastName}`}
+            Profesor:{" "}
+            {`${courses[0].teacher[0].firstName} ${courses[0].teacher[0].lastName}`}
           </Typography>
         </CardContent>
 
@@ -84,6 +86,8 @@ export default function Detail() {
           >
             Tema : {courses[0].tags}
           </Typography>
+
+          <CustomizedRating />
         </CardContent>
       </Box>
     </Card>
