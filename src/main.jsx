@@ -42,11 +42,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </BrowserRouter>
       </Provider>
     </PersistGate>
-  // <Provider store={store}>
-  //   <BrowserRouter>
-  //     <ThemeProvider theme={theme}>
-  //       <App />
-  //     </ThemeProvider>
-  //   </BrowserRouter>
-  // </Provider>
 );

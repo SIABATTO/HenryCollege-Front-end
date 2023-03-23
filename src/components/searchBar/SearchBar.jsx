@@ -63,14 +63,8 @@ export default function SearchBar() {
     dispatch(getCoursesByName(text));
   };
 
-<<<<<<< HEAD
+  const {courseById} = useSelector((state) => state.reducer.courseState);
 
-  const courses = useSelector(state=>state.reducer.courseState.courseByName)
-=======
-  const courses = useSelector((state) => state.courses.courseByName);
->>>>>>> detail
-
-  console.log(courses)
   return (
     <>
       <Box>
@@ -108,7 +102,7 @@ export default function SearchBar() {
         </AppBar>
       </Box>
       <Box margin={5}>
-        {courses?.map((course) => {
+        {courseById?.map((course) => {
           return (
             <Cards
               id={course.id}

@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changePageCourses } from "../../redux/store/slices/courses/getAllCourses";
 import Cards from "../card/Cards";
-import Filters from "../../components/filters/Filters";
 
 const Paged = () => {
   const dispatch = useDispatch();
@@ -16,14 +15,8 @@ const Paged = () => {
 
   useEffect(() => {
     dispatch(changePageCourses(page));
-    console.log("courses 1:", courses);
-<<<<<<< HEAD
-  }, [dispatch,page]);
-  const courses = useSelector((state) => state.reducer.courseState.list);
-=======
   }, [dispatch, page]);
-  const courses = useSelector((state) => state.courses.list);
->>>>>>> detail
+  const {list} = useSelector((state) => state.reducer.courseState);
 
   return (
     <>
@@ -54,9 +47,7 @@ const Paged = () => {
           justifyContent: "center",
         }}
       >
-        {Array.isArray(courses) &&
-          courses.length > 0 &&
-          courses.map((course) => (
+        {list?.map((course) => (
             <Cards
               id={course.id}
               name={course.name}

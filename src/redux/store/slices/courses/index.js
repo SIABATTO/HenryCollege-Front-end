@@ -1,11 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit"
-
+import { createSlice } from "@reduxjs/toolkit";
 
 export const coursesSlice = createSlice({
   name: "courses",
   initialState: {
     list: [], // initialize list to an empty array
-    data: {},
     courseById: [],
     courseByName: [],
   },
@@ -28,8 +26,6 @@ export const coursesSlice = createSlice({
     },
   },
 });
-
-
 
 export const {
   setcoursesList,
