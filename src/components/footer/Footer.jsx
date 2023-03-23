@@ -1,81 +1,89 @@
-import Box from '@mui/material/Box'
+import { Box } from '@mui/material'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
+import imageLogo from '../../assets/images/henryBlanco.png'
+import React from 'react'
 
 
 const Footer = () => {
   return (
-    <Box sx={{ bgcolor: 'common.black', color: 'grey.700' }}>
+    <Box sx={{ bgcolor: 'common.black', color: 'white', mt:'5rem'}}>
 
       <Container maxWidth="md" sx={{ py: 6 }}>
         <Stack spacing={4}>
-
-          <Typography>
-            Questions? Call 007-803-321-2130
-          </Typography>
-
           <Box>
             <Grid container spacing={4}>
               <Grid item xs={6} md={3}>
                 <Stack spacing={2}>
-                  <Typography variant="caption" component="a" href="#">
-                    FAQ
+                  <Box>
+                <img style={{ width : '60px'}} src={imageLogo} alt="logo" />
+                </Box>
+                  <Typography variant="caption" component="a" href="#" color="secondary">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit inventore voluptatum blanditiis optio? Minima harum accusantium temporibus voluptatem ullam, adipisci totam non ut qui facilis inventore, animi aliquam recusandae soluta.
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
-                    Investor Relations
+
+                </Stack>
+              </Grid>
+              <Grid item xs={6} md={3}>
+                <Stack spacing={2}>
+                  <Typography>
+                    Quick Links
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
-                    Privacy
+                  <Typography variant="caption" component="a" href="#" color="secondary">
+                    Portfolio
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
-                    Speed Test
+                  <Typography variant="caption" component="a" href="#" color="secondary">
+                    Blogs
+                  </Typography>
+                  <Typography variant="caption" component="a" href="#" color="secondary">
+                    About
+                  </Typography>
+                  <Typography variant="caption" component="a" href="#" color="secondary">
+                    Press
+                  </Typography>
+                  <Typography variant="caption" component="a" href="#" color="secondary">
+                    Careers We're hiring
                   </Typography>
                 </Stack>
               </Grid>
               <Grid item xs={6} md={3}>
                 <Stack spacing={2}>
-                  <Typography variant="caption" component="a" href="#">
-                    Help Center
+                  <Typography>
+                    Services
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
-                    Jobs
+                  <Typography variant="caption" component="a" href="#" color="secondary">
+                    UX/UI Design
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
-                    Cookie Preferences
+                  <Typography variant="caption" component="a" href="#" color="secondary">
+                    App Development
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
-                    Legal Notices
+                  <Typography variant="caption" component="a" href="#" color="secondary">
+                    Web Development
                   </Typography>
-                </Stack>
-              </Grid>
-              <Grid item xs={6} md={3}>
-                <Stack spacing={2}>
-                  <Typography variant="caption" component="a" href="#">
-                    Account
+                  <Typography variant="caption" component="a" href="#" color="secondary">
+                    Quality Assurance
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
-                    Ways to Watch
-                  </Typography>
-                  <Typography variant="caption" component="a" href="#">
-                    Corporate Information
-                  </Typography>
-                  <Typography variant="caption" component="a" href="#">
-                    Only on Netflix
+                  <Typography variant="caption" component="a" href="#" color="secondary">
+                    Machine Learning
                   </Typography>
                 </Stack>
               </Grid>
               <Grid item xs={6} md={3}>
                 <Stack spacing={2}>
-                  <Typography variant="caption" component="a" href="#">
-                    Media Center
+                  <Typography>
+                    Reach Us
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
-                    Terms of Use
+                  <Typography variant="caption" component="a" href="#" color="secondary">
+                    Hello@landify.co
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
-                    Contact Us
+                  <Typography variant="caption" component="a" href="#" color="secondary">
+                    +91 98765 43210
+                  </Typography>
+                  <Typography variant="caption" component="a" href="#" color="secondary">
+                    772 Lyonwood    Ave
+                    Walnut, CA 91789
                   </Typography>
                 </Stack>
               </Grid>
@@ -83,8 +91,7 @@ const Footer = () => {
             </Grid>
           </Box>
 
-          <Typography variant="caption">@2020 Landify UI kit.All rights reserved</Typography>
-
+          <Typography variant="caption">@2020 Landify UI kit.All rights reserved Terms & Conditions |Privacy Policy | Sitemap | Disclaimer</Typography>
         </Stack>
       </Container>
 

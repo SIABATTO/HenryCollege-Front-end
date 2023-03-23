@@ -1,23 +1,32 @@
-import { useState } from 'react'
+import { Route, Routes, useLocation } from "react-router-dom"
 import './App.css'
-import Pagination from './components/paged/Paged'
-import Footer from './components/footer/Footer'
-import { Container } from '@mui/system'
-import { Landing } from './views'
+import NavBar from './components/navBar/NavBar'
+import { About, Detail, Form, Home, Landing, SubLanding, UserDashboard, FormRegister } from './views'
+import React from "react"
+
 function App() {
-  const [count, setCount] = useState(0)
+
+  const location = useLocation();
 
   return (
-    <Container>
+
       <div className="App">
-        <div>
-          
-          <Pagination/>
-        </div>
-        <Landing/>
+        {location.pathname !== "/" && <NavBar />}
+        
+        <Routes>
+          <Route exact path="/" element={<Landing/>} />
+          <Route exact path="/dashboard" element={<UserDashboard/>} />
+          <Route exact path="/courses" element={<SubLanding/>} />
+          <Route exact path="/henrycollege" element={<SubLanding/>} />
+          <Route exact path="/henrycollege/courses" element={<Home/>} />
+          <Route exact path="/henrycollege/registrarse" element={<FormRegister/>} />
+          <Route exact path="/henrycollege/iniciarsesion" element={<Form/>} />
+          <Route exact path="/henrycollege/nosotros" element={<About/>} />          
+          <Route exact path="/henrycollege/detalle/:id" element={<Detail/>} />          
+        </Routes> 
+
+        
       </div>
-        <Footer/>
-    </Container>
   )
 }
 
