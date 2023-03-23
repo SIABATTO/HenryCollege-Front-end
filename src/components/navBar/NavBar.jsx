@@ -35,6 +35,7 @@ const NavBar = () => {
               Henry
             </Button>
           </Link>
+
           <Link to={"/henrycollege/courses"} color="inherit">
             <Button
               sx={{ mr: 2, color: "black", bgcolor: "#f5f5f5" }}
@@ -43,6 +44,7 @@ const NavBar = () => {
               Cursos
             </Button>
           </Link>
+
           <Link to={"/henrycollege/nosotros"} color="inherit">
             <Button
               sx={{ mr: 2, color: "black", bgcolor: "#f5f5f5" }}
@@ -51,6 +53,7 @@ const NavBar = () => {
               Nosotros
             </Button>
           </Link>
+
           <Link to={"/dashboard"} color="inherit">
             <Button
               sx={{ mr: 2, color: "black", bgcolor: "#f5f5f5" }}
@@ -75,6 +78,7 @@ const NavBar = () => {
               Crear Cuenta
             </Button>
           </Link>
+          
           <Link to={"/henrycollege/iniciarsesion"}>
             <Button
               sx={{

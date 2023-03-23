@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 package-lock.json
 yarn.lock
+
+# dotenv environment variables file
+.env

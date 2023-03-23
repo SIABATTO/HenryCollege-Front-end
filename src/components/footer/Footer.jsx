@@ -20,7 +20,7 @@ const Footer = () => {
                   <Box>
                 <img style={{ width : '60px'}} src={imageLogo} alt="logo" />
                 </Box>
-                  <Typography variant="caption" component="a" href="#">
+                  <Typography variant="caption" component="a" href="#" color="secondary">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit inventore voluptatum blanditiis optio? Minima harum accusantium temporibus voluptatem ullam, adipisci totam non ut qui facilis inventore, animi aliquam recusandae soluta.
                   </Typography>
 
@@ -31,19 +31,19 @@ const Footer = () => {
                   <Typography>
                     Quick Links
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
+                  <Typography variant="caption" component="a" href="#" color="secondary">
                     Portfolio
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
+                  <Typography variant="caption" component="a" href="#" color="secondary">
                     Blogs
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
+                  <Typography variant="caption" component="a" href="#" color="secondary">
                     About
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
+                  <Typography variant="caption" component="a" href="#" color="secondary">
                     Press
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
+                  <Typography variant="caption" component="a" href="#" color="secondary">
                     Careers We're hiring
                   </Typography>
                 </Stack>
@@ -53,19 +53,19 @@ const Footer = () => {
                   <Typography>
                     Services
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
+                  <Typography variant="caption" component="a" href="#" color="secondary">
                     UX/UI Design
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
+                  <Typography variant="caption" component="a" href="#" color="secondary">
                     App Development
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
+                  <Typography variant="caption" component="a" href="#" color="secondary">
                     Web Development
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
+                  <Typography variant="caption" component="a" href="#" color="secondary">
                     Quality Assurance
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
+                  <Typography variant="caption" component="a" href="#" color="secondary">
                     Machine Learning
                   </Typography>
                 </Stack>
@@ -75,13 +75,13 @@ const Footer = () => {
                   <Typography>
                     Reach Us
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
+                  <Typography variant="caption" component="a" href="#" color="secondary">
                     Hello@landify.co
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
+                  <Typography variant="caption" component="a" href="#" color="secondary">
                     +91 98765 43210
                   </Typography>
-                  <Typography variant="caption" component="a" href="#">
+                  <Typography variant="caption" component="a" href="#" color="secondary">
                     772 Lyonwood    Ave
                     Walnut, CA 91789
                   </Typography>

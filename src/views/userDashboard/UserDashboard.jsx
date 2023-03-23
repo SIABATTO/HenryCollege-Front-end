@@ -46,7 +46,7 @@ const UserDashboard = () => {
     dispatch(getAllUsers())
   }, [dispatch]) 
   
-  const {list} = useSelector(state=>state.reducer.userState)
+  const {list} = useSelector(state=>state.userState)
   
   return (
     <div style={{ height: 400, width: '100%' }}>

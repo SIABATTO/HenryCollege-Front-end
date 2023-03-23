@@ -11,12 +11,12 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
-export default function Cards({ name, image, level, tags }) {
+export default function Cards({ id, name, image, level, tags, duration }) {
   const buttonSx = {
     fontSize: "12px",
-    bgcolor: "#FFFF01",
+    bgcolor: "#000000",
     "&:hover": {
-      bgcolor: "#FFFF33",
+      bgcolor: "#000000",
     },
   };
 
@@ -27,26 +27,29 @@ export default function Cards({ name, image, level, tags }) {
       flexDirection="row"
       justifycontent="center"
       alignItems="center"
+      color="tertiary"
     >
-      <Link to={"/henrycollege/detalle"}>
-        <Card
-          sx={{
-            mr: 4,
-            fontSize: 8,
-            maxWidth: 300,
-            height: 220,
-            transition: "0.2s",
-            "&:hover": {
-              transform: "scale(1.05)",
-            },
-          }}
-        >
-          <CardActionArea>
+      <Card
+        sx={{
+          mr: 4,
+          fontSize: 8,
+          maxWidth: 300,
+          height: "auto",
+          transition: "0.2s",
+          "&:hover": {
+            transform: "scale(1.05)",
+          },
+        }}
+        color="tertiary"
+      >
+        <Link to={`/henrycollege/detalle/${id}`} color="tertiary">
+          <CardActionArea color="tertiary">
             <CardMedia
-              sx={{ height: "50%" }}
+              sx={{ height: "10%", width: "80%", m: "auto", mt: "1rem" }}
               component="img"
               image={image}
               display="flex"
+              color="tertiary"
             />
             <Box
               display="flex"
@@ -55,12 +58,14 @@ export default function Cards({ name, image, level, tags }) {
               alignItems="center"
               height={170}
               width={250}
+              color="tertiary"
             >
-              <CardContent>
+              <CardContent color="tertiary">
                 <Typography
                   textAlign="center"
                   sx={{ fontSize: "18px" }}
                   variant="h6"
+                  color="tertiary"
                 >
                   {name}
                 </Typography>
@@ -70,47 +75,50 @@ export default function Cards({ name, image, level, tags }) {
                 <Typography textAlign="center" sx={{ fontSize: "12px" }}>
                   Nivel: {level}
                 </Typography>
+                <Typography textAlign="center" sx={{ fontSize: "12px" }}>
+                  Duración: {duration}
+                </Typography>
               </CardContent>
             </Box>
           </CardActionArea>
+        </Link>
 
-          <Box
-            display="flex"
-            flexDirection="column"
-            justifycontent="center"
-            alignItems="center"
-          >
-            <CardActions>
-              <Box width={100}>
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifycontent="center"
+          alignItems="center"
+        >
+          <CardActions>
+            <Box width={100}>
+              <Button
+                color="tertiary"
+                sx={{ fontSize: "10px", bgcolor: "#FFFF01" }}
+              >
+                Comprar
+              </Button>
+            </Box>
+
+            <Box width={100}>
+              <Link to={"/henrycollege/registrarse"}>
                 <Button
-                  color="tertiary"
-                  sx={{ fontSize: "10px", bgcolor: "#FFFF01" }}
+                  sx={{
+                    fontSize: "10px",
+                    bgcolor: "#000000",
+                    "&:hover": {
+                      bgcolor: "#F0F0F0",
+                      color: "#000000",
+                    },
+                  }}
+                  color="secondary"
                 >
-                  Comprar
+                  Registrarse
                 </Button>
-              </Box>
-
-              <Box width={100}>
-                <Link to={"/henrycollege/registrarse"} >
-                  <Button
-                    sx={{
-                      fontSize: "10px",
-                      bgcolor: "#000000",
-                      "&:hover": {
-                        bgcolor: "#F0F0F0",
-                        color: "#000000",
-                      },
-                    }}
-                    color="secondary"
-                  >
-                    Registrarse
-                  </Button>
-                </Link>
-              </Box>
-            </CardActions>
-          </Box>
-        </Card>
-      </Link>
+              </Link>
+            </Box>
+          </CardActions>
+        </Box>
+      </Card>
     </Box>
   );
 }

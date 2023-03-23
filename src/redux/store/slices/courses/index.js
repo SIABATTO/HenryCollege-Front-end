@@ -15,8 +15,7 @@ export const coursesSlice = createSlice({
       state.data = action.payload;
     },
     getCourseById: (state, action) => {
-      const courseId = action.payload;
-      state.courseById = [state.list.find((course) => course.id === courseId)];
+      state.courseById = action.payload;
     },
     getCourseByName: (state, action) => {
       state.courseByName = action.payload;

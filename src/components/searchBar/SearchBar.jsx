@@ -63,7 +63,7 @@ export default function SearchBar() {
     dispatch(getCoursesByName(text));
   };
 
-  const {courseById} = useSelector((state) => state.reducer.courseState);
+  const courseById = useSelector((state) => state.courseState.courseByName);
 
   return (
     <>

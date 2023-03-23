@@ -16,7 +16,7 @@ const Paged = () => {
   useEffect(() => {
     dispatch(changePageCourses(page));
   }, [dispatch, page]);
-  const {list} = useSelector((state) => state.reducer.courseState);
+  const {list} = useSelector((state) => state.courseState);
 
   return (
     <>
@@ -28,9 +28,10 @@ const Paged = () => {
           justifyContent: "center",
           mt: "2rem",
         }}
+        color="tertiary"
       >
         <Pagination
-          count={3}
+          count={4}
           color="tertiary"
           onChange={handleChange}
           variant="outlined"
@@ -46,13 +47,15 @@ const Paged = () => {
           m: "3rem",
           justifyContent: "center",
         }}
+        color="tertiary"
       >
         {list?.map((course) => (
             <Cards
               id={course.id}
               name={course.name}
+              duration={course.duration}
               tags={course.tags[0]}
-              image={course.image}
+              image={course.imageSrc}
               key={course.id}
               level={course.level}
             />

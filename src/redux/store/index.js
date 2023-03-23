@@ -9,7 +9,7 @@ import thunk from "redux-thunk";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["userState", "courseState"],
+  whitelist: ["userState"],
 };
 
 const rootReducer = combineReducers({
@@ -20,8 +20,6 @@ const rootReducer = combineReducers({
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export default configureStore({
-  reducer: {
-    reducer: persistedReducer,
-    middleware: [thunk],
-  },
+  reducer: persistedReducer, // corrected line
+  middleware: [thunk],
 });

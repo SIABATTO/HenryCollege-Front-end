@@ -1,7 +1,7 @@
 import axios from "axios";
 import { setUserList, postUser } from ".";
 
-const URL = "http://localhost:3001";
+const URL = import.meta.env.VITE_BACK_URL;
 
 //Get users
 
