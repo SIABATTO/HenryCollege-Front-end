@@ -64,9 +64,10 @@ export default function SearchBar() {
     dispatch(getCoursesByName(text));
   };
 
-  const courses = useSelector(state=>state.courses.courseByName)
 
+  const courses = useSelector(state=>state.reducer.courseState.courseByName)
 
+  console.log(courses)
   return (
     <>
     <Box>

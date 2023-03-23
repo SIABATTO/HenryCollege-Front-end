@@ -17,7 +17,7 @@ const Paged = () => {
     dispatch(changePageCourses(page));
     console.log("courses 1:", courses);
   }, [dispatch,page]);
-  const courses = useSelector((state) => state.courses.list);
+  const courses = useSelector((state) => state.reducer.courseState.list);
 
   return (
     <>

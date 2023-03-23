@@ -6,6 +6,9 @@ import { BrowserRouter } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
+import persistStore from "redux-persist/es/persistStore";
+
 
 const theme = createTheme({
   palette: {
@@ -27,14 +30,18 @@ const theme = createTheme({
   },
 });
 
+const persistor = persistStore(store)
+
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <React.StrictMode>
-        <ThemeProvider theme={theme}>
-            <App />
-        </ThemeProvider>
-      </React.StrictMode>
-    </BrowserRouter>
-  </Provider>
+  <React.StrictMode>
+    <PersistGate persistor={persistor}>
+      <Provider store={store}>
+        <BrowserRouter>
+            <ThemeProvider theme={theme}>
+                <App />
+            </ThemeProvider>
+        </BrowserRouter>
+      </Provider>
+    </PersistGate>
+  </React.StrictMode>
 );
