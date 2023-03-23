@@ -9,7 +9,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <Box sx={{ bgcolor: 'common.black', color: 'white' }}>
+    <Box sx={{ bgcolor: 'common.black', color: 'white', mt:'5rem'}}>
 
       <Container maxWidth="md" sx={{ py: 6 }}>
         <Stack spacing={4}>

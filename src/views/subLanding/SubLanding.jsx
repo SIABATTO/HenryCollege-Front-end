@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
 import React from "react";
-import imageGirl from "../../assets/images/LandingGirl.jpg";
+import image from "../../assets/images/SubLanding.jpg";
 import Footer from "../../components/footer/Footer";
 import styles from "./SubLanding.module.css";
 import SearchBar from "../../components/searchBar/SearchBar";
@@ -10,7 +10,7 @@ function SubLanding() {
     <Box>
       <Box sx={{ bgcolor: 'common.black', color: 'white' }}>
         <Box className={styles.container}>
-          <Box className={styles.h}>
+          <Box className={styles.h} margin={3}>
             <h1>Actualizate de las nuevas tecnologías</h1>
             <h2>Cursos a precios asequibles</h2>
             <p>
@@ -20,7 +20,7 @@ function SubLanding() {
             </p>
           </Box>
           <Box>
-            <img style={{ width: "100%" }} src={imageGirl} alt="logo" />
+            <img style={{ width: "100%", }} src={image} alt="logo" />
           </Box>
         </Box>
       </Box>

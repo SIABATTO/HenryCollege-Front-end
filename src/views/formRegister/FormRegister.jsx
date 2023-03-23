@@ -1,116 +1,159 @@
-import { Button } from '@mui/material';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import * as React from 'react';
-import { postNewUser } from '../../redux/store/slices/users/getAllUsers';
-import { useDispatch } from 'react-redux';
+import {
+  TextField,
+  Box,
+  Button,
+  FormControl,
+  FormHelperText,
+  InputAdornment,
+  InputLabel,
+  OutlinedInput,
+  IconButton,
+} from "@mui/material";
+import * as React from "react";
+import { postNewUser } from "../../redux/store/slices/users/getAllUsers";
+import { useDispatch } from "react-redux";
 
-const FormRegister=()=> {
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-    const dispatch = useDispatch()
+const FormRegister = () => {
+  const dispatch = useDispatch();
 
-    const [input, setInput] = React.useState({
-        firstName : '',
-        lastName : '',
-        email: '',
-        phone: '',
-        password: ''               
+  const [input, setInput] = React.useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    password: "",
+  });
+  const [confirmPas, setConfirmPas] = React.useState("");
+
+  const onConfirmPass = (event) => {
+    event.preventDefault();
+    setConfirmPas(event.target.value);
+  };
+  const onChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    setInput({
+      ...input,
+      [name]: value,
     });
-    const [confirmPas, setConfirmPas] = React.useState('')
+  };
+  const onSubmit = (event) => {
+    event.preventDefault();
+    input.password !== confirmPas
+      ? alert("La contraseña no coincide")
+      : dispatch(postNewUser(input));
+  };
 
-    const onConfirmPass = (event)=>{
-      event.preventDefault()
-      setConfirmPas(event.target.value)
-    }
-    const onChange = (event) =>{
-      event.preventDefault()
-      const {name} = event.target
-      const {value} = event.target
-      setInput({
-        ...input,
-        [name] : value
-      })
-    }
-    const onSubmit = (event) => {
-       event.preventDefault()
-       input.password !== confirmPas ?
-       alert('La contraseña no coincide') : 
-       dispatch(postNewUser(input))             
-    }
-    
-  return (
-    <Box
+  const [showPassword, setShowPassword] = React.useState(false);
+  const [confirmPassword, setConfirmPassword] = React.useState(false);
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleConfirmPasswordChange = () => setConfirmPassword((show) => !show);
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  }
+
+  console.log(input.password, confirmPas)
+
+    return (
+      <Box
         component="form"
         sx={{
-        '& > :not(style)': { m: 3, display: 'flex', flexWrap: 'wrap'},
+          "& > :not(style)": { m: 3, display: "flex", flexWrap: "wrap" },
         }}
         noValidate
         autoComplete="off"
-    >
-      <div>
-        <TextField
-          id="outlined-controlled"
-          label="Nombre"
-          name='firstName'
-          value={input.firstName}
-          onChange={onChange}
-        />
-        <TextField
-          sx={{ml:2}}
-          id="outlined-controlled"
-          label="Apellido"
-          name='lastName'
-          value={input.lastName}
-          onChange={onChange}
-        />
-      </div>
-      <div>
-        <TextField
-          id="outlined-controlled"
-          label="Correo"
-          name='email'
-          type="email"
-          value={input.email}
-          onChange={onChange}
-        />
-        <TextField
-         sx={{ml:2}}
-          id="outlined-controlled"
-          label="Telefono"
-          name='phone'
-          value={input.phone}
-          onChange={onChange}
-        />
-      </div>
-      <div>
-        <TextField
-            id="outlined-password-input"
-            label="Contraseña"
-            type="password"
-            autoComplete="current-password"
-            value={input.password}
-            name="password"
+      >
+        <Box>
+          <TextField
+            label="Nombre"
+            name="firstName"
+            value={input.firstName}
             onChange={onChange}
-          />  
+            color="tertiary"
+            sx={{ m: 2, width: 300 }}
+            helperText="Campo obligatorio"
+          />
+          <TextField
+            label="Apellido"
+            name="lastName"
+            value={input.lastName}
+            onChange={onChange}
+            color="tertiary"
+            sx={{ m: 2, width: 300 }}
+            helperText="Campo obligatorio"
+          />
+        </Box>
+        <Box>
+          <TextField
+            label="Correo electrónico"
+            name="email"
+            type="email"
+            value={input.email}
+            onChange={onChange}
+            color="tertiary"
+            sx={{ m: 2, width: 300 }}
+            helperText="Campo obligatorio"
+          />
+          <TextField
+            label="Teléfono"
+            name="phone"
+            value={input.phone}
+            onChange={onChange}
+            color="tertiary"
+            sx={{ m: 2, width: 300 }}
+            helperText="Campo obligatorio"
+          />
+        </Box>
+        <Box>
         <TextField
-            sx={{ml:2}}
-            id="outlined-password-input"
-            label="Repite contraseña"
-            type="password"
-            value={confirmPas}
-            name="confirm_contraseña"
-            autoComplete="current-password"
-            onChange={onConfirmPass}
-              />   
-      </div>
-          <Button 
-            sx={{mr: 2 , bgcolor:'#ffff00',color:'#212121', width:'90%'}} 
-            variant="contained"
-            onClick={onSubmit}
-            type='submit'
-            >Registrarse
-          </Button>      
-    </Box>
-  );
-}
-export default FormRegister
+          sx={{ m: 2, width: 300 }}
+          id="filled-password-input"
+          label="Contraseña"
+          type="password"
+          autoComplete="current-password"
+          name="password"
+          value={input.password}
+          onChange={onChange}
+          helperText="Campo obligatorio"
+          color="tertiary"
+        />
+        <TextField
+          sx={{ m: 2, width: 300 }}
+          id="filled-password-input"
+          label="Repite contraseña"
+          type="password"
+          autoComplete="current-password"
+          value={confirmPas}
+          onChange={onConfirmPass}
+          helperText="Campo obligatorio"
+          color="tertiary"
+        />
+        </Box>
+
+        <Button
+          sx={{
+            m: 2,
+            bgcolor: "#ffff00",
+            "&:hover": {
+              bgcolor: "#F0F0F0",
+              color: "#000000",
+            },
+            color: "#212121",
+            width: "93%",
+          }}
+          variant="contained"
+          onClick={onSubmit}
+          type="submit"
+        >
+          Registrarse
+        </Button>
+      </Box>
+    );
+ 
+};
+export default FormRegister;

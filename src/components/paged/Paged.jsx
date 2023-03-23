@@ -1,28 +1,64 @@
-import React from "react";
-import { Pagination } from "@mui/material";
+import React, { useEffect } from "react";
+import { Box, Pagination } from "@mui/material";
 import { useState } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { changePageCourses } from "../../redux/store/slices/courses/getAllCourses";
+import Cards from "../card/Cards";
 
 const Paged = () => {
+  const dispatch = useDispatch();
+
   const [page, setPage] = useState(1);
   const handleChange = (e, p) => {
     setPage(p);
   };
+
+  useEffect(() => {
+    dispatch(changePageCourses(page));
+  }, [dispatch, page]);
+  const {list} = useSelector((state) => state.reducer.courseState);
+
   return (
-    <div>
-      <h1>Esta pagina es {page}</h1>
-      <Pagination
-        count={10}
-        color="secondary"
-        onChange={handleChange}
-        sx={{ 
-            '& .Mui-selected': { color: 'gray' }, 
-            '& .MuiPaginationItem-root': { fontFamily: 'Arial, sans-serif', fontSize: '1.2rem', color: 'white'},
-            '& .MuiPaginationItem-root.Mui-selected': { color: 'black' },
-            '& .css-wjh20t-MuiPagination-ul': { justifyContent: 'center' }, 
+    <>
+      <Box
+        sx={{
+          display: "flex",
+          m: "2rem",
+          width: "100%",
+          justifyContent: "center",
+          mt: "2rem",
         }}
-      />
-    </div>
+      >
+        <Pagination
+          count={3}
+          color="tertiary"
+          onChange={handleChange}
+          variant="outlined"
+          justifycontent="center"
+        />
+      </Box>
+      
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          flexWrap: "wrap",
+          m: "3rem",
+          justifyContent: "center",
+        }}
+      >
+        {list?.map((course) => (
+            <Cards
+              id={course.id}
+              name={course.name}
+              tags={course.tags[0]}
+              image={course.image}
+              key={course.id}
+              level={course.level}
+            />
+          ))}
+      </Box>
+    </>
   );
 };
 

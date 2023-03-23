@@ -21,8 +21,8 @@ export const getAllUsers = () => {
 export const postNewUser = (user) => {
   return async (dispatch) => {
     try {
-      const response = await axios.post(`${URL}/students`, user);
-      dispatch(postUser(response.data));
+      const res = await axios.post(`${URL}/students`, user);
+      dispatch(postUser(res.data));
       alert("Registro exitoso");
     } catch (error) {
       console.log("error_redux", error);
