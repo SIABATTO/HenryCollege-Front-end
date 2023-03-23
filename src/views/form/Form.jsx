@@ -1,8 +1,8 @@
-import { 
-  Grid, 
-  TextField, 
-  Box, 
-  Card, 
+import {
+  Grid,
+  TextField,
+  Box,
+  Card,
   CardContent,
   FormControl,
   FormHelperText,
@@ -10,29 +10,31 @@ import {
   InputLabel,
   OutlinedInput,
   IconButton,
+  Button,
 } from "@mui/material";
 import styles from "./Form.module.css";
 import React, { useEffect, useState } from "react";
-import LoadingButton from '@mui/lab/LoadingButton';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import LoadingButton from "@mui/lab/LoadingButton";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { Link } from "react-router-dom";
 
 function Form() {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const { email, password } = formData;
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevFormData => ({
+    setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: value
+      [name]: value,
     }));
-  }
+  };
 
   // const handleOnChange = (e) => {
   //   // console.log([e.target.name], e.target.value)
@@ -41,12 +43,12 @@ function Form() {
 
   const handleSubmit = (email, password) => {
     console.log(email, password);
-    setLoading(true)
-    alert(`datos iniciar sesion:::, ${email}, ${password}`)
+    setLoading(true);
+    alert(`datos iniciar sesion:::, ${email}, ${password}`);
     setTimeout(() => {
-      setLoading(false)
+      setLoading(false);
     }, 3000);
-  }
+  };
 
   const [showPassword, setShowPassword] = React.useState(false);
 
@@ -81,68 +83,100 @@ function Form() {
               <CardContent>
                 <Grid item xs={12} sm={12} md={20} lg={20} xl={20}>
                   <TextField
-                  name="email"
-                  value={email}
-                  onChange={handleOnChange}
-                  error={false}
-                  label="Tu email"
-                  type="text"
-                  margin="dense"
-                  fullWidth
-                  variant="outlined"
-                  helperText="Campo obligatorio"
-                  sx={{ width: 300 }}
-                  color="tertiary"
+                    name="email"
+                    value={email}
+                    onChange={handleOnChange}
+                    error={false}
+                    label="Correo electrónico"
+                    type="text"
+                    margin="dense"
+                    fullWidth
+                    sx={{ width: 300 }}
+                    color="tertiary"
                   />
                 </Grid>
-                
-                <FormControl 
-                name="password"
-                value={password}
-                onChange={handleOnChange}
-                error={false}
-                label="Tu contraseña"
-                type="text"
-                fullWidth
-                variant="outlined"
-                sx={{ m: 2, width: 300 }} 
-                color="tertiary"
-                >
-                <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-                <OutlinedInput
-                  id="outlined-adornment-password"
-                  type={showPassword ? 'text' : 'password'}
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                        edge="end"
-                      >
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    </InputAdornment>
-                  }
-                  label="Password"
-                  color="tertiary"
-                />
-                <FormHelperText id="outlined-password-helper-text">Campo obligatorio</FormHelperText>
-              </FormControl>
 
-                <Box sx={{'& > button': { m: 1 } }}>
-                  <LoadingButton
-                  size="small"
-                  onClick={() => handleSubmit(email, password)}
-                  loading={loading}
+                <FormControl
+                  name="password"
+                  value={password}
+                  onChange={handleOnChange}
+                  error={false}
+                  label="Contraseña"
+                  type="text"
+                  fullWidth
                   variant="outlined"
-                  disabled={ !loading ? false : true}
-                  style={{ width: 300 }}
-                  sx={{ mr: 2 ,bgcolor:'#ffff00',color:'#212121'}}
+                  sx={{ m: 2, width: 300 }}
                   color="tertiary"
+                >
+                  <InputLabel htmlFor="outlined-adornment-password">
+                    Contraseña
+                  </InputLabel>
+                  <OutlinedInput
+                    id="outlined-adornment-password"
+                    type={showPassword ? "text" : "password"}
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                          edge="end"
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                    label="Contraseña"
+                    color="tertiary"
+                  />
+                  <FormHelperText id="outlined-password-helper-text">
+                    Campo obligatorio
+                  </FormHelperText>
+                </FormControl>
+
+                <Box sx={{ "& > button": { m: 1 } }}>
+                  <LoadingButton
+                    variant="contained"
+                    type="submit"
+                    onClick={() => handleSubmit(email, password)}
+                    loading={loading}
+                    disabled={!loading ? false : true}
+                    style={{ width: 300 }}
+                    sx={{
+                      mr: 2,
+                      bgcolor: "#ffff00",
+                      "&:hover": {
+                        bgcolor: "#F0F0F0",
+                        color: "#000000",
+                      },
+                      color: "#212121",
+                    }}
+                    color="tertiary"
                   >
                     Iniciar Sesión
                   </LoadingButton>
+                </Box>
+
+                <Box sx={{ "& > button": { m: 1 } }}>
+                  <Link to="/henrycollege/registrarse">
+                    <Button
+                      variant="contained"
+                      type="submit"
+                      style={{ width: 300 }}
+                      sx={{
+                        marginY: 2,
+                        bgcolor: "#000000",
+                        "&:hover": {
+                          bgcolor: "#F0F0F0",
+                          color: "#000000",
+                        },
+                        color: "#secondary",
+                      }}
+                      color="tertiary"
+                    >
+                      Registrarse
+                    </Button>
+                  </Link>
                 </Box>
               </CardContent>
             </Card>
